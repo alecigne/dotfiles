@@ -1,0 +1,5 @@
+rofi.theme:		/usr/share/rofi/themes/glue_pro_blue.rasi
+rofi.combi-modi:	window,run
+rofi.modi:		combi
+rofi.show-icons:	true
+rofi.sidebar-mode:	true

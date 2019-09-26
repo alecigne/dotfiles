@@ -1,0 +1,438 @@
+#+TITLE: Git aliases
+
+* One-letter aliases
+:PROPERTIES:
+:header-args: :noweb-ref oneletter
+:END:
+
+One letter alias for our most frequent commands.
+
+Guidelines: these aliases do not use options, because we want these
+aliases to be easy to compose and use in many ways.
+
+#+BEGIN_SRC conf
+  a = add
+  b = branch
+  c = commit
+  d = diff
+  f = fetch
+  g = grep
+  l = log
+  m = merge
+  o = checkout
+  p = pull
+  r = remote
+  s = status
+  w = whatchanged
+#+END_SRC
+
+* Short aliases
+
+Generally speaking, the alias should be in the same order as the
+command name followed by its options.
+
+- Right: fb = foo --bar
+- Wrong: bf = foo --bar
+
+** ~add~
+:PROPERTIES:
+:header-args: :noweb-ref add
+:END:
+
+add all
+
+#+BEGIN_SRC conf
+  aa = add --all
+#+END_SRC
+
+add by patch - looks at each change, and asks if we want to put it in
+the repo.
+
+#+BEGIN_SRC conf
+  ap = add --patch
+#+END_SRC
+
+add just the files that are updated.
+
+#+BEGIN_SRC conf
+  au = add --update
+#+END_SRC
+
+** ~branch~
+:PROPERTIES:
+:header-args: :noweb-ref branch
+:END:
+
+branch - edit the description
+
+#+BEGIN_SRC conf
+  be = branch --edit-description
+#+END_SRC
+
+branch and only list branches whose tips are reachable from the
+specified commit (HEAD if not specified).
+
+#+BEGIN_SRC conf
+  bm = branch --merged
+#+END_SRC
+
+branch and only list branches whose tips are not reachable from the
+specified commit (HEAD if not specified).
+
+#+BEGIN_SRC conf
+  bnm = branch --no-merged
+#+END_SRC
+
+** ~commit~
+:PROPERTIES:
+:header-args: :noweb-ref commit
+:END:
+
+Amend the tip of the current branch rather than creating a new commit.
+
+#+BEGIN_SRC conf
+  ca = commit --amend
+#+END_SRC
+
+Amend the tip of the current branch, and do not edit the message.
+
+#+BEGIN_SRC conf
+  cane = commit --amend --no-edit
+#+END_SRC
+
+Commit with a message
+
+#+BEGIN_SRC conf
+  cm = commit --message
+#+END_SRC
+
+Commit without message (aka "Git as a filesystem")
+
+#+begin_src conf
+  ce = commit --message "" --allow-empty-message
+#+end_src
+
+** ~log~
+:PROPERTIES:
+:header-args: :noweb-ref log
+:END:
+
+~log~ with a text-based graphical representation of the commit
+history.
+
+#+BEGIN_SRC conf
+  lg = log --graph
+#+END_SRC
+
+~log~ with one line per item.
+
+#+BEGIN_SRC conf
+  lo = log --oneline
+#+END_SRC
+
+~log~ with patch generation.
+
+#+BEGIN_SRC conf
+  lp = log --patch
+#+END_SRC
+
+~log~ with first parent, useful for team branch that only accepts pull
+requests
+
+#+BEGIN_SRC conf
+  lfp = log --first-parent
+#+END_SRC
+
+~log~ with items appearing in topological order, i.e. descendant
+commits are shown before their parents.
+
+#+BEGIN_SRC conf
+  lt = log --topo-order
+#+END_SRC
+
+~log~ like - we like this summarization our key performance
+indicators. Also aliased as `log-like`.
+
+#+BEGIN_SRC conf
+  ll = log --graph --topo-order --abbrev-commit --date=short --decorate --all --boundary --pretty=format:'%Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Cblue[%cn]%Creset %Cblue%G?%Creset'
+#+END_SRC
+
+** ~pull~
+:PROPERTIES:
+:header-args: :noweb-ref pull
+:END:
+
+~pull~ if a merge can be resolved as a fast-forward, otherwise fail.
+
+#+BEGIN_SRC conf
+  pf = pull --ff-only
+#+END_SRC
+
+~pull with rebase~ - to provide a cleaner, linear, bisectable history.
+
+#+BEGIN_SRC conf
+  pr = pull --rebase
+#+END_SRC
+
+** ~rebase~
+:PROPERTIES:
+:header-args: :noweb-ref rebase
+:END:
+
+rebase - forward-port local commits to the updated upstream head.
+
+#+BEGIN_SRC conf
+  rb = rebase
+#+END_SRC
+
+rebase abort - cancel the rebasing process
+
+#+BEGIN_SRC conf
+  rba = rebase --abort
+#+END_SRC
+
+rebase - continue the rebasing process after resolving a conflict
+manually and updating the index with the resolution.
+
+#+BEGIN_SRC conf
+  rbc = rebase --continue
+#+END_SRC
+
+** ~status~
+:PROPERTIES:
+:header-args: :noweb-ref status
+:END:
+
+status with short format instead of full details
+
+#+BEGIN_SRC conf
+  ss = status --short
+#+END_SRC
+
+status with short format and showing branch and tracking info.
+
+#+BEGIN_SRC conf
+  ssb = status --short --branch
+#+END_SRC
+
+* ~log~ aliases
+:PROPERTIES:
+:header-args: :noweb-ref log-aliases
+:END:
+
+Show log of changes, most recent first
+
+#+BEGIN_SRC conf
+  log-changes = log --oneline --reverse
+#+END_SRC
+
+Show log of new commits after you fetched, with stats, excluding
+merges
+
+#+BEGIN_SRC conf
+  log-fresh = log ORIG_HEAD.. --stat --no-merges
+#+END_SRC
+
+Show log in our preferred format for our key performance
+indicators. A.k.a. `ll`.
+
+#+BEGIN_SRC conf
+  log-like = log --graph --topo-order --abbrev-commit --date=short --decorate --all --boundary --pretty=format:'%Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Cblue[%cn]%Creset %Cblue%G?%Creset'
+#+END_SRC
+
+Show log with dates in our local timezone
+
+#+BEGIN_SRC conf
+  log-local = log --date=local
+#+END_SRC
+
+Show the log for my own commits by my own user email
+
+#+BEGIN_SRC conf
+  log-my = !git log --author $(git config user.email)
+#+END_SRC
+
+Show log as a graph
+
+#+BEGIN_SRC conf
+  log-graph = log --graph --all --oneline --decorate
+#+END_SRC
+
+Show the date of the earliest commit, in strict ISO 8601 format
+
+#+BEGIN_SRC conf
+  log-first-date = !"git log --date-order --format=%cI | tail -1"
+#+END_SRC
+
+Show the date of the latest commit, in strict ISO 8601 format
+
+#+BEGIN_SRC conf
+  log-latest-date = log -1 --date-order --format=%cI
+#+END_SRC
+
+Show the number of log entries by a specific date format
+
+#+BEGIN_SRC conf
+  log-count-per-date-format = "!f() { d=\"$1\"; shift; git log $@ --format=oneline --format="%ad" --date=format:\"$d\" | awk '{a[$0]++}END{for(i in a){print i, a[i]}}' | sort; }; f"
+#+END_SRC
+
+Show the log of the recent hour, day, week, month, year
+
+#+BEGIN_SRC conf
+  log-hour  = log --since "1 hour ago"
+  log-day   = log --since "1 day ago"
+  log-week  = log --since "1 week ago"
+  log-month = log --since "1 month ago"
+  log-year  = log --since "1 year ago"
+#+END_SRC
+
+Show the log of my own recent hour, day, week, month, year
+
+#+BEGIN_SRC conf
+  log-my-hour  = log --author $(git config user.email) --since "1 hour ago"
+  log-my-day   = log --author $(git config user.email) --since "1 day ago"
+  log-my-week  = log --author $(git config user.email) --since "1 week ago"
+  log-my-month = log --author $(git config user.email) --since "1 month ago"
+  log-my-year  = log --author $(git config user.email) --since "1 year ago"
+#+END_SRC
+
+Show the number of log items by year, or month, or day, etc.
+
+#+BEGIN_SRC conf
+  log-count-per-hour          = "!f() { git log-count-per-date-format \"%Y-%m-%dT%H\" $@ ; }; f"
+  log-count-per-day           = "!f() { git log-count-per-date-format \"%Y-%m-%d\" $@ ; }; f"
+  log-count-per-week          = "!f() { git log-count-per-date-format \"%Y#%V\" $@; }; f"
+  log-count-per-month         = "!f() { git log-count-per-date-format \"%Y-%m\" $@ ; }; f"
+  log-count-per-year          = "!f() { git log-count-per-date-format \"%Y\" $@ ; }; f"
+  log-count-per-hour-of-day   = "!f() { git log-count-per-date-format \"%H\" $@; }; f"
+  log-count-per-day-of-week   = "!f() { git log-count-per-date-format \"%u\" $@; }; f"
+  log-count-per-week-of-year  = "!f() { git log-count-per-date-format \"%V\" $@; }; f"
+#+END_SRC
+
+* Lookup aliases
+:PROPERTIES:
+:header-args: :noweb-ref lookup
+:END:
+
+whois: given a string for an author, try to figure out full name and
+email:
+
+#+BEGIN_SRC conf
+  whois = "!sh -c 'git log --regexp-ignore-case -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -"
+#+END_SRC
+
+Given any git object, try to show it briefly
+
+#+BEGIN_SRC conf
+  whatis = show --no-patch --pretty='tformat:%h (%s, %ad)' --date=short
+#+END_SRC
+
+Show who contributed with summarized changes
+
+#+BEGIN_SRC conf
+  who = shortlog --summary --
+#+END_SRC
+
+Show who contributed, in descending order by number of commits
+
+#+BEGIN_SRC conf
+  whorank = shortlog --summary --numbered --no-merges
+#+END_SRC
+
+* Workflow aliases
+:PROPERTIES:
+:header-args: :noweb-ref workflow
+:END:
+
+Stash aliases for push & pop
+
+Note that if you are using an older version of git, before 2.16.0,
+then you can use the older "stash save" instead of the newer "stash
+push".
+
+#+BEGIN_SRC conf
+  save = stash push
+  pop = stash pop
+#+END_SRC
+
+Do a push/pull for just one branch
+
+#+BEGIN_SRC conf
+  push1 = "!git push origin $(git branch-name)"
+  pull1 = "!git pull origin $(git branch-name)"
+#+END_SRC
+
+Undo is simply a synonym for "reset" because "undo" can help novices.
+
+#+BEGIN_SRC conf
+  undo-commit        = reset --soft HEAD~1
+  undo-commit-hard   = reset --hard HEAD~1
+#+END_SRC
+
+Nicknames
+
+#+BEGIN_SRC conf
+  uncommit = reset --soft HEAD~1
+  unadd = reset HEAD
+  unstage = reset HEAD
+#+END_SRC
+
+Discard changes in a (list of) file(s) in working tree
+
+#+BEGIN_SRC conf
+  discard = checkout --
+#+END_SRC
+
+Friendly wording is easier to remember.
+
+#+BEGIN_SRC conf
+  branches = branch -a
+  tags = tag -n1 --list
+  stashes = stash list
+#+END_SRC
+
+* Technical sections                                               :noexport:
+
+** Main node
+
+#+BEGIN_SRC conf :tangle ".gitalias" :noweb yes
+  [alias]
+
+  # one letter
+  <<oneletter>>
+
+  # add
+  <<add>>
+
+  # branch
+  <<branch>>
+
+  # commit
+  <<commit>>
+
+  # log
+  <<log>>
+
+  # log aliases
+  <<log-aliases>>
+
+  # pull
+  <<pull>>
+
+  # rebase
+  <<rebase>>
+
+  # status
+  <<status>>
+
+  # lookup
+  <<lookup>>
+
+  # workflow
+  <<workflow>>
+#+END_SRC
+
+** Org properties
+
+#+PROPERTY: header-args :tangle no
+#+PROPERTY: header-args+ :padline no

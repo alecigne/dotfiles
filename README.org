@@ -1,0 +1,143 @@
+#+TITLE: Dotfiles
+
+My dotfiles, managed using the [[https://www.gnu.org/software/stow/][GNU Stow]] symlink farm manager.
+
+* About GNU Stow
+
+** Quickstart
+
+Just run :
+
+#+begin_src sh
+  stow emacs
+#+end_src
+
+This will treat the ~emacs~ directory as a Stow package and create
+symlinks pointing to its content in the parent directory (here the
+home directory).
+
+** Slowstart
+
+#+begin_src sh
+  stow .
+#+end_src
+
+Stow the current package to the parent directory.
+
+Some users treat their stow directory as a big, unique package. In
+that case, ~stow .~ is useful.
+
+I prefer to have a stow directory with multiple packages in it such as
+~emacs~ or ~i3~. In my case, the ~stow .~ command would be useful only
+/inside/ such a package:
+
+#+begin_src sh
+  cd emacs
+  stow . -t ~
+#+end_src
+
+This stows the current package to the home directory thanks to the
+~-t~ option (/target/). Otherwise the target directory would have been
+the package's parent directory, ~~/.dotfiles~.
+
+So in my case, I mostly use ~stow~ like this:
+
+#+begin_src sh
+  stow emacs
+#+end_src
+
+This stows the ~emacs~ package to the parent directory. This is by the
+way equivalent to ~stow --stow emacs~, or ~stow -S emacs~.
+
+#+begin_src sh
+  stow -d ~/.dotfiles emacs
+#+end_src
+
+This is the same as above, but done from outside the stow
+directory. Without the ~-d~ option, ~stow emacs~ could stow an ~emacs~
+directory from your current location - this is not what you want.
+
+To test these options you can use the ~-n~ flag. This will simulate
+the changes without modify your file system. To see more than eventual
+errors, use it in combination with the ~-v~ flag. A moderately
+elaborate, stow command, mostly useless in my case :) :
+
+#+begin_src sh
+  cd emacs
+  stow -n . -t ~ -v
+#+end_src
+
+Output :
+
+#+begin_example
+  stow dir is /home/alc/.dotfiles/emacs
+  stow dir path relative to target /home/alc is .dotfiles/emacs
+  Planning stow of package ....
+  LINK: .emacs.d => .dotfiles/emacs/.emacs.d
+  Planning stow of package .... done
+  WARNING: in simulation mode so not modifying filesystem.
+#+end_example
+
+** Ignore lists
+
+Files can be excluded from the stowing process using [[https://www.gnu.org/software/stow/manual/html_node/Ignore-Lists.html#Ignore-Lists][ignore lists]].
+
+* Components
+
+** cVim
+
+[[https://chrome.google.com/webstore/detail/cvim/ihlenndgcmojhcghmfjfneahoeklbjjh][cVim]], an extension adding Vim-like bindings to Google Chrome.
+
+Just load this once in Chrome:
+
+#+begin_example
+  set localconfig
+  let configpath = '/path/to/.cvimrc'
+#+end_example
+
+** Emacs
+
+[[https://github.com/alecigne/.emacs.d][SwanEmacs]], my Org-based Emacs configuration, included as a submodule.
+
+** i3
+
+My config for the [[https://i3wm.org/][i3]] window manager, including my [[https://i3wm.org/i3status/manpage.html][i3status]]
+configuration.
+
+** Git
+
+My [[https://git-scm.com/][Git]] configuration. So far it only includes a selection of ~git~
+aliases from the [[https://github.com/GitAlias/gitalias][gitalias]] repository, organized with ~org-babel~ for
+more readability. Please go to the original source for reference.
+
+*** Usage
+
+**** Org
+
+- Every section has a Noweb reference.
+
+- Everything is then fed to a main code block through Noweb (see
+  the bottom of the raw Org file).
+
+- The result after ~org-babel-tangle~ is a ~.gitalias~ file.
+
+**** Git
+
+Add this to ~.gitconfig~ after generating ~.gitalias~ and stowing:
+
+#+BEGIN_EXAMPLE
+  [include]
+  path = .gitalias
+#+END_EXAMPLE
+
+** Rofi
+
+[[https://github.com/davatorium/rofi][Rofi]], a window switcher, application launcher and dmenu replacement.
+
+** SBCL
+
+[[http://www.sbcl.org/][SBCL]], a high performance Common Lisp compiler.
+
+** Zsh
+
+A great [[http://www.zsh.org/][shell]].

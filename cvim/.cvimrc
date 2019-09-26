@@ -1,0 +1,5 @@
+set regexp
+set noautofocus
+set smoothscroll
+unmap s w u e
+map d closeTab

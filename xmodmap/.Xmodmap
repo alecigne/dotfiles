@@ -1,0 +1,18 @@
+clear lock
+clear control
+clear mod3
+clear mod4
+
+keycode 66 = Control_L
+keycode 37 = Hyper_L
+keycode 105 = Control_R
+
+add lock = Control_R
+add control = Control_L
+add mod3 = Hyper_L
+add mod4 = Super_L
+
+keycode 24 = a A NoSymbol NoSymbol Greek_alpha NoSymbol
+keycode 32 = o O NoSymbol NoSymbol oe OE
+keycode 56 = b B NoSymbol NoSymbol Greek_beta NoSymbol
+keycode 94 = less greater less greater lessthanequal greaterthanequal

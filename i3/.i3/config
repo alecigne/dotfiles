@@ -1,4 +1,5 @@
 # Things to launch
+# exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id gnome-settings-daemon
 exec --no-startup-id nm-applet
 exec --no-startup-id feh --bg-scale ~/.wallpapers/saturn.jpg

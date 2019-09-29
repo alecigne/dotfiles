@@ -2,6 +2,24 @@
 
 My dotfiles, managed using the [[https://www.gnu.org/software/stow/][GNU Stow]] symlink farm manager.
 
+* Table of contents                                            :toc:noexport:
+- [[#about-gnu-stow][About GNU Stow]]
+  - [[#quickstart][Quickstart]]
+  - [[#slowstart][Slowstart]]
+  - [[#ignore-lists][Ignore lists]]
+- [[#components][Components]]
+  - [[#cmus][cmus]]
+  - [[#cvim][cVim]]
+  - [[#emacs][Emacs]]
+  - [[#i3][i3]]
+  - [[#git][Git]]
+  - [[#polybar][Polybar]]
+  - [[#rofi][Rofi]]
+  - [[#sbcl][SBCL]]
+  - [[#wallpapers][Wallpapers]]
+  - [[#xmodmap][Xmodmap]]
+  - [[#zsh][Zsh]]
+
 * About GNU Stow
 
 ** Quickstart
@@ -84,6 +102,11 @@ Files can be excluded from the stowing process using [[https://www.gnu.org/softw
 
 * Components
 
+** cmus
+
+[[https://cmus.github.io][cmus]] is a small, fast and powerful console music player for Unix-like
+operating systems.
+
 ** cVim
 
 [[https://chrome.google.com/webstore/detail/cvim/ihlenndgcmojhcghmfjfneahoeklbjjh][cVim]], an extension adding Vim-like bindings to Google Chrome.
@@ -130,6 +153,10 @@ Add this to ~.gitconfig~ after generating ~.gitalias~ and stowing:
   path = .gitalias
 #+END_EXAMPLE
 
+** Polybar
+
+[[https://github.com/polybar/polybar][Polybar]], a fast and easy-to-use status bar.
+
 ** Rofi
 
 [[https://github.com/davatorium/rofi][Rofi]], a window switcher, application launcher and dmenu replacement.
@@ -137,6 +164,17 @@ Add this to ~.gitconfig~ after generating ~.gitalias~ and stowing:
 ** SBCL
 
 [[http://www.sbcl.org/][SBCL]], a high performance Common Lisp compiler.
+
+** Wallpapers
+
+Good resources:
+
+- https://wallhaven.cc/
+- https://unsplash.com/
+
+** Xmodmap
+
+My Xmodmap config.
 
 ** Zsh
 

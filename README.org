@@ -16,6 +16,7 @@ My dotfiles, managed using the [[https://www.gnu.org/software/stow/][GNU Stow]] 
   - [[#polybar][Polybar]]
   - [[#rofi][Rofi]]
   - [[#sbcl][SBCL]]
+  - [[#stumpwm][StumpWM]]
   - [[#wallpapers][Wallpapers]]
   - [[#xmodmap][Xmodmap]]
   - [[#zsh][Zsh]]
@@ -164,6 +165,10 @@ Add this to ~.gitconfig~ after generating ~.gitalias~ and stowing:
 ** SBCL
 
 [[http://www.sbcl.org/][SBCL]], a high performance Common Lisp compiler.
+
+** StumpWM
+
+My [[https://github.com/alecigne/.stumpwm.d][StumpWM config]], included as a submodule.
 
 ** Wallpapers
 

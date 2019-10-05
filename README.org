@@ -65,35 +65,50 @@ So in my case, I mostly use ~stow~ like this:
   stow emacs
 #+end_src
 
-This stows the ~emacs~ package to the parent directory. This is by the
-way equivalent to ~stow --stow emacs~, or ~stow -S emacs~.
+This stows the ~emacs~ package to the parent directory, which is my
+homedir. This is by the way equivalent to ~stow --stow emacs~, or
+~stow -S emacs~.
 
 #+begin_src sh
   stow -d ~/.dotfiles emacs
 #+end_src
 
 This is the same as above, but done from outside the stow
-directory. Without the ~-d~ option, ~stow emacs~ could stow an ~emacs~
-directory from your current location - this is not what you want.
+directory. As the manpage puts it:
 
-To test these options you can use the ~-n~ flag. This will simulate
-the changes without modify your file system. To see more than eventual
-errors, use it in combination with the ~-v~ flag. A moderately
-elaborate, stow command, mostly useless in my case :) :
+#+begin_quote
+This also has the effect of making the default target directory be the
+parent of "DIR"
+#+end_quote
+
+If you want to change the target, again use ~-t~:
 
 #+begin_src sh
-  cd emacs
-  stow -n . -t ~ -v
+  stow -d ~/.dotfiles emacs -t ~
 #+end_src
 
-Output :
+To test these options you can use the ~-n~ flag. This will simulate
+the changes without modifying the file system. To see more than
+eventual errors, use it in combination with the ~-v~ flag. A
+moderately elaborate stow command just to summarize:
+
+#+begin_src sh
+  # Let's go to a random dir
+  cd /var
+
+  # We stow the emacs package (~/.dotfiles/emacs/) to the system temp
+  # dir (/tmp)
+  stow -n -vv -d ~/.dotfiles emacs -t /tmp
+#+end_src
+
+Output:
 
 #+begin_example
-  stow dir is /home/alc/.dotfiles/emacs
-  stow dir path relative to target /home/alc is .dotfiles/emacs
-  Planning stow of package ....
-  LINK: .emacs.d => .dotfiles/emacs/.emacs.d
-  Planning stow of package .... done
+  stow dir is /home/alc/.dotfiles
+  stow dir path relative to target /tmp is ../home/alc/.dotfiles
+  Planning stow of package emacs...
+  LINK: .emacs.d => ../home/alc/.dotfiles/emacs/.emacs.d
+  Planning stow of package emacs... done
   WARNING: in simulation mode so not modifying filesystem.
 #+end_example
 

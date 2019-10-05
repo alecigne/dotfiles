@@ -7,16 +7,15 @@ My dotfiles, managed using the [[https://www.gnu.org/software/stow/][GNU Stow]] 
   - [[#quickstart][Quickstart]]
   - [[#slowstart][Slowstart]]
   - [[#ignore-lists][Ignore lists]]
-- [[#components][Components]]
-  - [[#asdf][ASDF]]
+- [[#packages][Packages]]
   - [[#cmus][cmus]]
+  - [[#common-lisp][Common Lisp]]
   - [[#cvim][cVim]]
   - [[#emacs][Emacs]]
   - [[#i3][i3]]
   - [[#git][Git]]
   - [[#polybar][Polybar]]
   - [[#rofi][Rofi]]
-  - [[#sbcl][SBCL]]
   - [[#stumpwm][StumpWM]]
   - [[#wallpapers][Wallpapers]]
   - [[#xmodmap][Xmodmap]]
@@ -102,19 +101,27 @@ Output :
 
 Files can be excluded from the stowing process using [[https://www.gnu.org/software/stow/manual/html_node/Ignore-Lists.html#Ignore-Lists][ignore lists]].
 
-* Components
+* Packages
 
-** ASDF
+** cmus
+
+[[https://cmus.github.io][cmus]] is a small, fast and powerful console music player for Unix-like
+operating systems.
+
+** Common Lisp
+
+My Common Lisp (SBCL) configuration.
+
+*** ASDF
 
 [[https://common-lisp.net/project/asdf/][Another System Definition Facility]], a build system for Common Lisp.
 
 This includes the configuration for ASDF's ~source-registry~. More
 info [[https://common-lisp.net/project/asdf/asdf/Configuring-ASDF-to-find-your-systems.html][here]].
 
-** cmus
+*** SBCL
 
-[[https://cmus.github.io][cmus]] is a small, fast and powerful console music player for Unix-like
-operating systems.
+[[http://www.sbcl.org/][SBCL]], a high performance Common Lisp compiler.
 
 ** cVim
 
@@ -169,10 +176,6 @@ Add this to ~.gitconfig~ after generating ~.gitalias~ and stowing:
 ** Rofi
 
 [[https://github.com/davatorium/rofi][Rofi]], a window switcher, application launcher and dmenu replacement.
-
-** SBCL
-
-[[http://www.sbcl.org/][SBCL]], a high performance Common Lisp compiler.
 
 ** StumpWM
 

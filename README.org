@@ -8,6 +8,7 @@ My dotfiles, managed using the [[https://www.gnu.org/software/stow/][GNU Stow]] 
   - [[#slowstart][Slowstart]]
   - [[#ignore-lists][Ignore lists]]
 - [[#components][Components]]
+  - [[#asdf][ASDF]]
   - [[#cmus][cmus]]
   - [[#cvim][cVim]]
   - [[#emacs][Emacs]]
@@ -102,6 +103,13 @@ Output :
 Files can be excluded from the stowing process using [[https://www.gnu.org/software/stow/manual/html_node/Ignore-Lists.html#Ignore-Lists][ignore lists]].
 
 * Components
+
+** ASDF
+
+[[https://common-lisp.net/project/asdf/][Another System Definition Facility]], a build system for Common Lisp.
+
+This includes the configuration for ASDF's ~source-registry~. More
+info [[https://common-lisp.net/project/asdf/asdf/Configuring-ASDF-to-find-your-systems.html][here]].
 
 ** cmus
 

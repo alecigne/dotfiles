@@ -193,3 +193,9 @@ client.urgent #2f343a #900000 #ffffff #900000
 # # color defines for zenburn styled i3
 set $blue     #285577
 set $white     #ffffff
+
+# cmus
+bindsym XF86AudioPlay exec cmus-remote --pause
+bindsym XF86AudioStop exec cmus-remote --stop
+bindsym XF86AudioNext exec cmus-remote --next
+bindsym XF86AudioPrev exec cmus-remote --prev

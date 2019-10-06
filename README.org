@@ -14,6 +14,7 @@ My dotfiles, managed using the [[https://www.gnu.org/software/stow/][GNU Stow]] 
   - [[#emacs][Emacs]]
   - [[#i3][i3]]
   - [[#git][Git]]
+  - [[#packages-1][Packages]]
   - [[#polybar][Polybar]]
   - [[#rofi][Rofi]]
   - [[#stumpwm][StumpWM]]
@@ -183,6 +184,10 @@ Add this to ~.gitconfig~ after generating ~.gitalias~ and stowing:
   [include]
   path = .gitalias
 #+END_EXAMPLE
+
+** Packages
+
+My installed packages, a work in progress.
 
 ** Polybar
 

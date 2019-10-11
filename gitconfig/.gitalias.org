@@ -112,6 +112,18 @@ Commit without message (aka "Git as a filesystem")
   ce = commit --message "" --allow-empty-message
 #+end_src
 
+** ~fetch~
+:PROPERTIES:
+:header-args: :noweb-ref fetch
+:END:
+
+Fetch the remote, remove any remote-tracking references that no longer
+exist on the remote (except tags) and fetch all tags from the remote.
+
+#+begin_src conf
+  fpt = fetch --prune --tags
+#+end_src
+
 ** ~log~
 :PROPERTIES:
 :header-args: :noweb-ref log
@@ -409,6 +421,9 @@ Friendly wording is easier to remember.
 
   # commit
   <<commit>>
+
+  # fetch
+  <<fetch>>
 
   # log
   <<log>>

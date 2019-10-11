@@ -31,6 +31,9 @@ cane = commit --amend --no-edit
 cm = commit --message
 ce = commit --message "" --allow-empty-message
 
+# fetch
+fpt = fetch --prune --tags
+
 # log
 lg = log --graph
 lo = log --oneline

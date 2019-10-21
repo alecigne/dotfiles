@@ -159,6 +159,7 @@ Just load this once in Chrome:
 ** Fonts
 
 - [[https://github.com/adobe-fonts/source-code-pro][Source Code Pro]]
+- [[https://github.com/FortAwesome/Font-Awesome][FontAwesome]]
 
 ** Git
 

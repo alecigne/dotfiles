@@ -12,8 +12,8 @@ My dotfiles, managed using the [[https://www.gnu.org/software/stow/][GNU Stow]] 
   - [[#common-lisp][Common Lisp]]
   - [[#cvim][cVim]]
   - [[#emacs][Emacs]]
-  - [[#i3][i3]]
   - [[#git][Git]]
+  - [[#i3][i3]]
   - [[#packages-1][Packages]]
   - [[#polybar][Polybar]]
   - [[#rofi][Rofi]]
@@ -21,6 +21,7 @@ My dotfiles, managed using the [[https://www.gnu.org/software/stow/][GNU Stow]] 
   - [[#wallpapers][Wallpapers]]
   - [[#xmodmap][Xmodmap]]
   - [[#zsh][Zsh]]
+- [[#todos][TODOs]]
 
 * About GNU Stow
 
@@ -154,11 +155,6 @@ Just load this once in Chrome:
 
 [[https://github.com/alecigne/.emacs.d][SwanEmacs]], my Org-based Emacs configuration, included as a submodule.
 
-** i3
-
-My config for the [[https://i3wm.org/][i3]] window manager, including my [[https://i3wm.org/i3status/manpage.html][i3status]]
-configuration.
-
 ** Git
 
 My [[https://git-scm.com/][Git]] configuration. So far it only includes a selection of ~git~
@@ -184,6 +180,11 @@ Add this to ~.gitconfig~ after generating ~.gitalias~ and stowing:
   [include]
   path = .gitalias
 #+END_EXAMPLE
+
+** i3
+
+My config for the [[https://i3wm.org/][i3]] window manager, including my [[https://i3wm.org/i3status/manpage.html][i3status]]
+configuration.
 
 ** Packages
 
@@ -215,3 +216,7 @@ My Xmodmap config.
 ** Zsh
 
 A great [[http://www.zsh.org/][shell]].
+
+* TODOs
+
+- [ ] Add fonts

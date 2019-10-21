@@ -4,3 +4,7 @@
 [submodule "stumpwm/.stumpwm.d"]
 	path = stumpwm/.stumpwm.d
 	url = git@github.com:alecigne/.stumpwm.d.git
+[submodule "fonts/.fonts/source-code-pro"]
+	path = fonts/.fonts/source-code-pro
+	url = git@github.com:adobe-fonts/source-code-pro.git
+	branch = release

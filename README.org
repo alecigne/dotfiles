@@ -12,6 +12,7 @@ My dotfiles, managed using the [[https://www.gnu.org/software/stow/][GNU Stow]] 
   - [[#common-lisp][Common Lisp]]
   - [[#cvim][cVim]]
   - [[#emacs][Emacs]]
+  - [[#fonts][Fonts]]
   - [[#git][Git]]
   - [[#i3][i3]]
   - [[#packages-1][Packages]]
@@ -155,6 +156,10 @@ Just load this once in Chrome:
 
 [[https://github.com/alecigne/.emacs.d][SwanEmacs]], my Org-based Emacs configuration, included as a submodule.
 
+** Fonts
+
+- [[https://github.com/adobe-fonts/source-code-pro][Source Code Pro]]
+
 ** Git
 
 My [[https://git-scm.com/][Git]] configuration. So far it only includes a selection of ~git~
@@ -219,4 +224,4 @@ A great [[http://www.zsh.org/][shell]].
 
 * TODOs
 
-- [ ] Add fonts
+- [X] Add fonts

@@ -4,9 +4,6 @@ My dotfiles, managed using the [[https://www.gnu.org/software/stow/][GNU Stow]] 
 
 * Table of contents                                            :toc:noexport:
 - [[#about-gnu-stow][About GNU Stow]]
-  - [[#quickstart][Quickstart]]
-  - [[#slowstart][Slowstart]]
-  - [[#ignore-lists][Ignore lists]]
 - [[#packages][Packages]]
   - [[#cmus][cmus]]
   - [[#common-lisp][Common Lisp]]
@@ -26,98 +23,8 @@ My dotfiles, managed using the [[https://www.gnu.org/software/stow/][GNU Stow]] 
 
 * About GNU Stow
 
-** Quickstart
-
-Just run :
-
-#+begin_src sh
-  stow emacs
-#+end_src
-
-This will treat the ~emacs~ directory as a Stow package and create
-symlinks pointing to its content in the parent directory (here the
-home directory).
-
-** Slowstart
-
-#+begin_src sh
-  stow .
-#+end_src
-
-Stow the current package to the parent directory.
-
-Some users treat their stow directory as a big, unique package. In
-that case, ~stow .~ is useful.
-
-I prefer to have a stow directory with multiple packages in it such as
-~emacs~ or ~i3~. In my case, the ~stow .~ command would be useful only
-/inside/ such a package:
-
-#+begin_src sh
-  cd emacs
-  stow . -t ~
-#+end_src
-
-This stows the current package to the home directory thanks to the
-~-t~ option (/target/). Otherwise the target directory would have been
-the package's parent directory, ~~/.dotfiles~.
-
-So in my case, I mostly use ~stow~ like this:
-
-#+begin_src sh
-  stow emacs
-#+end_src
-
-This stows the ~emacs~ package to the parent directory, which is my
-homedir. This is by the way equivalent to ~stow --stow emacs~, or
-~stow -S emacs~.
-
-#+begin_src sh
-  stow -d ~/.dotfiles emacs
-#+end_src
-
-This is the same as above, but done from outside the stow
-directory. As the manpage puts it:
-
-#+begin_quote
-This also has the effect of making the default target directory be the
-parent of "DIR"
-#+end_quote
-
-If you want to change the target, again use ~-t~:
-
-#+begin_src sh
-  stow -d ~/.dotfiles emacs -t ~
-#+end_src
-
-To test these options you can use the ~-n~ flag. This will simulate
-the changes without modifying the file system. To see more than
-eventual errors, use it in combination with the ~-v~ flag. A
-moderately elaborate stow command just to summarize:
-
-#+begin_src sh
-  # Let's go to a random dir
-  cd /var
-
-  # We stow the emacs package (~/.dotfiles/emacs/) to the system temp
-  # dir (/tmp)
-  stow -n -vv -d ~/.dotfiles emacs -t /tmp
-#+end_src
-
-Output:
-
-#+begin_example
-  stow dir is /home/alc/.dotfiles
-  stow dir path relative to target /tmp is ../home/alc/.dotfiles
-  Planning stow of package emacs...
-  LINK: .emacs.d => ../home/alc/.dotfiles/emacs/.emacs.d
-  Planning stow of package emacs... done
-  WARNING: in simulation mode so not modifying filesystem.
-#+end_example
-
-** Ignore lists
-
-Files can be excluded from the stowing process using [[https://www.gnu.org/software/stow/manual/html_node/Ignore-Lists.html#Ignore-Lists][ignore lists]].
+You can read a short GNU Stow tutorial in my notes, [[https://github.com/alecigne/notes/blob/master/stow.org][here on GitHub]] or
+[[https://anthony.lecigne.net/stow.html][on my website]].
 
 * Packages
 

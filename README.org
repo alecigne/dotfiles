@@ -93,6 +93,13 @@ configuration.
 
 My installed packages, a work in progress.
 
+** Pass
+
+My passwords, managed with [[https://www.passwordstore.org/][pass]], the standard unix password
+manager. This is a private submodule pointing to a repository hosted
+on my Raspberry Pi. Although passwords are safely encrypted with
+GnuPG, I prefer not to make these files public.
+
 ** Polybar
 
 [[https://github.com/polybar/polybar][Polybar]], a fast and easy-to-use status bar.

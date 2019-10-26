@@ -12,3 +12,6 @@
 	path = fonts/.fonts/font-awesome
 	url = git@github.com:FortAwesome/Font-Awesome.git
 	branch = master
+[submodule "password-store/.password-store"]
+	path = password-store/.password-store
+	url = alc@192.168.1.30:/home/alc/usbdrv/password-store.git

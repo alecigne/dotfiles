@@ -2,23 +2,9 @@
 
 My dotfiles, managed using the [[https://www.gnu.org/software/stow/][GNU Stow]] symlink farm manager.
 
-* Table of contents                                            :toc:noexport:
+* Table of contents                                            :toc_1:noexport:
 - [[#about-gnu-stow][About GNU Stow]]
 - [[#packages][Packages]]
-  - [[#cmus][cmus]]
-  - [[#common-lisp][Common Lisp]]
-  - [[#cvim][cVim]]
-  - [[#emacs][Emacs]]
-  - [[#fonts][Fonts]]
-  - [[#git][Git]]
-  - [[#i3][i3]]
-  - [[#packages-1][Packages]]
-  - [[#polybar][Polybar]]
-  - [[#rofi][Rofi]]
-  - [[#stumpwm][StumpWM]]
-  - [[#wallpapers][Wallpapers]]
-  - [[#xmodmap][Xmodmap]]
-  - [[#zsh][Zsh]]
 - [[#todos][TODOs]]
 
 * About GNU Stow
@@ -93,6 +79,10 @@ Add this to ~.gitconfig~ after generating ~.gitalias~ and stowing:
   [include]
   path = .gitalias
 #+END_EXAMPLE
+
+** GnuPG
+
+My [[https://www.gnupg.org/][GnuPG]] config files.
 
 ** i3
 

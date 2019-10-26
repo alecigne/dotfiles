@@ -1,3 +1,3 @@
 #!/bin/bash
 
-find ~ ! -readable -prune -o -lname "*etc/dotfiles*" -print | sort
+find ~ ! -readable -prune -o -lname "*dotfiles*" -print | sort

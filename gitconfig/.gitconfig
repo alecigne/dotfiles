@@ -1,0 +1,4 @@
+[user]
+	name = Anthony Le Cigne
+[include]
+	path = .gitalias

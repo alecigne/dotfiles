@@ -59,13 +59,11 @@ files.
 
 ** Git
 
-My [[https://git-scm.com/][Git]] configuration. So far it only includes a selection of ~git~
-aliases from the [[https://github.com/GitAlias/gitalias][gitalias]] repository, organized with ~org-babel~ for
-more readability. Please go to the original source for reference.
+My [[https://git-scm.com/][Git]] configuration. Aliases include a selection of ~git~ aliases
+from the [[https://github.com/GitAlias/gitalias][gitalias]] repository, organized with ~org-babel~ for more
+readability. Please go to the original source for reference.
 
-*** Usage
-
-**** Org
+About the ~.gitalias.org~ file:
 
 - Every section has a Noweb reference.
 
@@ -73,15 +71,6 @@ more readability. Please go to the original source for reference.
   the bottom of the raw Org file).
 
 - The result after ~org-babel-tangle~ is a ~.gitalias~ file.
-
-**** Git
-
-Add this to ~.gitconfig~ after generating ~.gitalias~ and stowing:
-
-#+BEGIN_EXAMPLE
-  [include]
-  path = .gitalias
-#+END_EXAMPLE
 
 ** GnuPG
 

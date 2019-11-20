@@ -13,23 +13,28 @@ My dotfiles, managed using the [[https://www.gnu.org/software/stow/][GNU Stow]] 
 
 The idea of dotfiles is explained [[https://wiki.archlinux.org/index.php/Dotfiles][here]].
 
+#+begin_quote
+User-specific application configuration is traditionally stored in so
+called dotfiles (files whose filename starts with a dot). It is common
+practice to track dotfiles with a version control system such as Git
+to keep track of changes and synchronize dotfiles across various
+hosts.
+#+end_quote
+
 * Branching strategy
 
-Every environment I use (my personal laptop, my work computer(s),
-Termux on my phone...) has its own variation of dotfiles. The public,
-~master~ branch you see in this repository is the common denominator
-for all of them.
-
-I keep variations in separate, private branches since 1. they're of
-limited interest and 2. they are "concrete" implementations of this
-"abstract" master branch, and thus might contain mildly sensitive
-information.
+Every environment I use has its own variation of dotfiles. The public,
+~master~ branch you see in this repository is my "main" config
+(personal laptop and PC). Variations are kept in separate branches.
 
 * About GNU Stow
 
 I use GNU Stow to manage symbolic links to my dotfiles. You can read a
 short GNU Stow tutorial in my [[https://anthony.lecigne.net/stow.html][public notes]] (also available [[https://github.com/alecigne/notes/blob/master/stow.org][on Github]]
 as a "source" Org file).
+
+The ~stow.bash~ script automatically stows the packages in the home
+directory.
 
 * Packages
 
@@ -163,4 +168,5 @@ A great [[http://www.zsh.org/][shell]].
 
 * TODOs
 
-- [ ] Find alternative to binary files for fonts (use a script)
+- [ ] Find alternative to binary files for fonts (use an install
+  script?)

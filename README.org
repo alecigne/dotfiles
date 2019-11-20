@@ -7,6 +7,7 @@ My dotfiles, managed using the [[https://www.gnu.org/software/stow/][GNU Stow]] 
 - [[#branching-strategy][Branching strategy]]
 - [[#about-gnu-stow][About GNU Stow]]
 - [[#packages][Packages]]
+- [[#todos][TODOs]]
 
 * Dotfiles?
 
@@ -72,8 +73,23 @@ Just load this once in Chrome:
 Originally included as submodules, but now managed as simple ~.otf~
 files.
 
-- [[https://github.com/adobe-fonts/source-code-pro][Source Code Pro]]
-- [[https://github.com/FortAwesome/Font-Awesome][FontAwesome]]
+*** FontAwesome
+
+See [[https://github.com/FortAwesome/Font-Awesome][FontAwesome]] on Github.
+
+*** Fira
+
+See [[https://github.com/bBoxType/FiraSans][this repo]] and [[https://bboxtype.com/typefaces/FiraSans/][this page]]. This font is used in Firefox OS;
+however...
+
+#+begin_quote
+After Mozilla withdrew from the project, we integrated small bug
+fixes and several requests for the 4.3 release.
+#+end_quote
+
+*** Source Code Pro
+
+See [[https://github.com/adobe-fonts/source-code-pro][Source Code Pro]] on Github.
 
 ** Git
 
@@ -144,3 +160,7 @@ My Xmodmap config.
 ** Zsh
 
 A great [[http://www.zsh.org/][shell]].
+
+* TODOs
+
+- [ ] Find alternative to binary files for fonts (use a script)

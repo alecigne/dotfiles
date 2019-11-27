@@ -136,10 +136,10 @@ history.
   lg = log --graph
 #+END_SRC
 
-~log~ with one line per item.
+~log~ with one line per item and a pretty format (taken from [[https://stackoverflow.com/questions/1441010/the-shortest-possible-output-from-git-log-containing-author-and-date#comment11498716_1441062][here]]).
 
 #+BEGIN_SRC conf
-  lo = log --oneline
+  lo = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short
 #+END_SRC
 
 ~log~ with patch generation.

@@ -17,6 +17,7 @@ mupdf
 ncdu
 nitrokey-app
 ntfs-3g
+numlockx
 pandoc
 parted
 pass
@@ -27,6 +28,7 @@ redshift
 rofi
 sbcl
 skypeforlinux
+scdaemon
 stow
 syncthing
 tmux

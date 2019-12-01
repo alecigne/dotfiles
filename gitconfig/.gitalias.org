@@ -17,6 +17,7 @@ aliases to be easy to compose and use in many ways.
   d = diff
   f = fetch
   g = grep
+  h = show
   l = log
   m = merge
   o = checkout
@@ -100,16 +101,34 @@ Amend the tip of the current branch, and do not edit the message.
   cane = commit --amend --no-edit
 #+END_SRC
 
+Same, but add the files.
+
+#+begin_src conf
+  acane = commit -a --amend --no-edit
+#+end_src
+
 Commit with a message
 
 #+BEGIN_SRC conf
   cm = commit --message
 #+END_SRC
 
-Commit without message (aka "Git as a filesystem")
+Add and commit with message.
 
 #+begin_src conf
-  ce = commit --message "" --allow-empty-message
+  acm = commit -am
+#+end_src
+
+Commit with an empty message (aka "Git as a filesystem")
+
+#+begin_src conf
+  cme = commit --message \"\" --allow-empty-message
+#+end_src
+
+Add and commit with an empty message.
+
+#+begin_src conf
+  acme = commit -am \"\" --allow-empty-message
 #+end_src
 
 ** ~fetch~
@@ -209,6 +228,17 @@ manually and updating the index with the resolution.
 #+BEGIN_SRC conf
   rbc = rebase --continue
 #+END_SRC
+
+** ~show~
+:PROPERTIES:
+:header-args: :noweb-ref show
+:END:
+
+Show the content of the last commit.
+
+#+begin_src conf
+  hh = show @
+#+end_src
 
 ** ~status~
 :PROPERTIES:
@@ -436,6 +466,9 @@ Friendly wording is easier to remember.
 
   # rebase
   <<rebase>>
+
+  # show
+  <<show>>
 
   # status
   <<status>>

@@ -7,6 +7,7 @@ c = commit
 d = diff
 f = fetch
 g = grep
+h = show
 l = log
 m = merge
 o = checkout
@@ -28,8 +29,11 @@ bnm = branch --no-merged
 # commit
 ca = commit --amend
 cane = commit --amend --no-edit
+acane = commit -a --amend --no-edit
 cm = commit --message
-ce = commit --message "" --allow-empty-message
+acm = commit -am
+cme = commit --message \"\" --allow-empty-message
+acme = commit -am \"\" --allow-empty-message
 
 # fetch
 fpt = fetch --prune --tags
@@ -79,6 +83,9 @@ pr = pull --rebase
 rb = rebase
 rba = rebase --abort
 rbc = rebase --continue
+
+# show
+hh = show @
 
 # status
 ss = status --short

@@ -18,3 +18,6 @@ prompt_end() {
 }
 
 export PATH="$HOME/bin:$PATH"
+
+# Personal environment variables
+export ALC_LEDGER_FILE="${HOME}/org/org-files/finances/ledger2019.dat"

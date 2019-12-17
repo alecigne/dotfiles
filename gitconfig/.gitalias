@@ -26,6 +26,9 @@ be = branch --edit-description
 bm = branch --merged
 bnm = branch --no-merged
 
+# checkout
+ob = checkout -b
+
 # commit
 ca = commit --amend
 cane = commit --amend --no-edit

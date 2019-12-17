@@ -84,6 +84,17 @@ specified commit (HEAD if not specified).
   bnm = branch --no-merged
 #+END_SRC
 
+** ~checkout~
+:PROPERTIES:
+:header-args: :noweb-ref checkout
+:END:
+
+Checkout in a new branch.
+
+#+begin_src conf
+  ob = checkout -b
+#+end_src
+
 ** ~commit~
 :PROPERTIES:
 :header-args: :noweb-ref commit
@@ -448,6 +459,9 @@ Friendly wording is easier to remember.
 
   # branch
   <<branch>>
+
+  # checkout
+  <<checkout>>
 
   # commit
   <<commit>>

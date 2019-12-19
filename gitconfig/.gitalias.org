@@ -64,6 +64,12 @@ add just the files that are updated.
 :header-args: :noweb-ref branch
 :END:
 
+List all branches.
+
+#+begin_src conf
+  ba = branch -a
+#+end_src
+
 branch - edit the description
 
 #+BEGIN_SRC conf

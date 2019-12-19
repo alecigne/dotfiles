@@ -22,6 +22,7 @@ ap = add --patch
 au = add --update
 
 # branch
+ba = branch -a
 be = branch --edit-description
 bm = branch --merged
 bnm = branch --no-merged

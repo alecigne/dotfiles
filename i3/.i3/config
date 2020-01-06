@@ -12,7 +12,7 @@ workspace_layout tabbed
 set $mod Mod4
 
 # Fonts
-font pango:Droid Sans 10
+font pango:DejaVu Sans 10
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -177,7 +177,7 @@ bindsym $mod+F1 mode "$mode_system"
 bar {
   mode dock
   status_command i3status
-  font pango:Droid Sans 10
+  font pango:DejaVu Sans, Font Awesome 5 Free 10
   position bottom
   colors {
     statusline #cccccc

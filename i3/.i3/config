@@ -207,3 +207,6 @@ bindsym XF86AudioPrev exec cmus-remote --prev
 for_window [class="(?i)firefox"] title_format "<tt></tt><span foreground='#FF6611'>  </span><tt> </tt>%title"
 for_window [class="(.*)terminal(.*)"] title_format "<tt></tt><span foreground='#00FF00' background='#000000'>  </span><tt> </tt>%title"
 for_window [class="(.*)Chromium-browser(.*)"] title_format "<tt></tt><span foreground='#367dd0' background='#d9e5f4'>  </span><tt> </tt>%title"
+
+# IntelliJ
+for_window [class="jetbrains-idea" title="win0"] floating enable;

@@ -211,3 +211,5 @@ for_window [class="(.*)Chromium-browser(.*)"] title_format "<tt></tt><span foreg
 
 # IntelliJ
 for_window [class="jetbrains-idea" title="win0"] floating enable;
+
+focus_follows_mouse no

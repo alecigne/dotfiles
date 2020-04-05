@@ -148,6 +148,17 @@ Add and commit with an empty message.
   acme = commit -am \"\" --allow-empty-message
 #+end_src
 
+** ~diff~
+:PROPERTIES:
+:header-args: :noweb-ref diff
+:END:
+
+Show staged changes against the current HEAD.
+
+#+BEGIN_SRC conf
+  dc = diff --cached
+#+END_SRC
+
 ** ~fetch~
 :PROPERTIES:
 :header-args: :noweb-ref fetch
@@ -457,46 +468,20 @@ Friendly wording is easier to remember.
 #+BEGIN_SRC conf :tangle ".gitalias" :noweb yes
   [alias]
 
-  # one letter
   <<oneletter>>
-
-  # add
   <<add>>
-
-  # branch
   <<branch>>
-
-  # checkout
   <<checkout>>
-
-  # commit
   <<commit>>
-
-  # fetch
+  <<diff>>
   <<fetch>>
-
-  # log
   <<log>>
-
-  # log aliases
   <<log-aliases>>
-
-  # pull
   <<pull>>
-
-  # rebase
   <<rebase>>
-
-  # show
   <<show>>
-
-  # status
   <<status>>
-
-  # lookup
   <<lookup>>
-
-  # workflow
   <<workflow>>
 #+END_SRC
 

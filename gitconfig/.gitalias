@@ -1,6 +1,5 @@
 [alias]
 
-# one letter
 a = add
 b = branch
 c = commit
@@ -15,22 +14,14 @@ p = pull
 r = remote
 s = status
 w = whatchanged
-
-# add
 aa = add --all
 ap = add --patch
 au = add --update
-
-# branch
 ba = branch -a
 be = branch --edit-description
 bm = branch --merged
 bnm = branch --no-merged
-
-# checkout
 ob = checkout -b
-
-# commit
 ca = commit --amend
 cane = commit --amend --no-edit
 acane = commit -a --amend --no-edit
@@ -38,19 +29,14 @@ cm = commit --message
 acm = commit -am
 cme = commit --message \"\" --allow-empty-message
 acme = commit -am \"\" --allow-empty-message
-
-# fetch
+dc = diff --cached
 fpt = fetch --prune --tags
-
-# log
 lg = log --graph
 lo = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short
 lp = log --patch
 lfp = log --first-parent
 lt = log --topo-order
 ll = log --graph --topo-order --abbrev-commit --date=short --decorate --all --boundary --pretty=format:'%Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Cblue[%cn]%Creset %Cblue%G?%Creset'
-
-# log aliases
 log-changes = log --oneline --reverse
 log-fresh = log ORIG_HEAD.. --stat --no-merges
 log-like = log --graph --topo-order --abbrev-commit --date=short --decorate --all --boundary --pretty=format:'%Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Cblue[%cn]%Creset %Cblue%G?%Creset'
@@ -78,30 +64,18 @@ log-count-per-year          = "!f() { git log-count-per-date-format \"%Y\" $@ ; 
 log-count-per-hour-of-day   = "!f() { git log-count-per-date-format \"%H\" $@; }; f"
 log-count-per-day-of-week   = "!f() { git log-count-per-date-format \"%u\" $@; }; f"
 log-count-per-week-of-year  = "!f() { git log-count-per-date-format \"%V\" $@; }; f"
-
-# pull
 pf = pull --ff-only
 pr = pull --rebase
-
-# rebase
 rb = rebase
 rba = rebase --abort
 rbc = rebase --continue
-
-# show
 hh = show @
-
-# status
 ss = status --short
 ssb = status --short --branch
-
-# lookup
 whois = "!sh -c 'git log --regexp-ignore-case -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -"
 whatis = show --no-patch --pretty='tformat:%h (%s, %ad)' --date=short
 who = shortlog --summary --
 whorank = shortlog --summary --numbered --no-merges
-
-# workflow
 save = stash push
 pop = stash pop
 push1 = "!git push origin $(git branch-name)"

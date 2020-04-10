@@ -30,7 +30,7 @@ Every environment I use has its own variation of dotfiles. The public,
 * About GNU Stow
 
 I use GNU Stow to manage symbolic links to my dotfiles. You can read a
-short GNU Stow tutorial in my [[https://anthony.lecigne.net/stow.html][public notes]] (also available [[https://github.com/alecigne/notes/blob/master/stow.org][on Github]]
+short GNU Stow tutorial in my [[https://lecigne.net/notes/stow.html][public notes]] (also available [[https://github.com/alecigne/notes/blob/master/stow.org][on Github]]
 as a "source" Org file).
 
 The ~stow.bash~ script automatically stows the packages in the home
@@ -150,6 +150,11 @@ GnuPG, I prefer not to make these files public.
 ** StumpWM
 
 My [[https://github.com/alecigne/.stumpwm.d][StumpWM config]], included as a submodule.
+
+** VSCode
+
+My [[https://code.visualstudio.com/][VSCode]] config. I am not a heavy VSCode user; as of today, I only
+track the ~$HOME/.config/Code/User/settings.json~.
 
 ** Wallpapers
 

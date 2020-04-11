@@ -1,3 +1,7 @@
 {
-    "window.menuBarVisibility": "toggle"
+    "window.menuBarVisibility": "toggle",
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.colorTheme": "Monokai",
+    "telemetry.enableTelemetry": false,
+    "telemetry.enableCrashReporter": false
 }

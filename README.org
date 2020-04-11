@@ -153,8 +153,9 @@ My [[https://github.com/alecigne/.stumpwm.d][StumpWM config]], included as a sub
 
 ** VSCode
 
-My [[https://code.visualstudio.com/][VSCode]] config. I am not a heavy VSCode user; as of today, I only
-track the ~$HOME/.config/Code/User/settings.json~.
+My [[https://code.visualstudio.com/][VSCode]] config. I keep ~$HOME/.config/Code/User/settings.json~ under
+version control and a list of extensions. A script will install them
+automatically; I can get them through ~code --list-extensions~.
 
 ** Wallpapers
 

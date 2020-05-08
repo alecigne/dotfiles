@@ -152,6 +152,7 @@ bindsym $mod+Return exec --no-startup-id rofi -show combi
 
 # App mode
 mode "app" {
+  bindsym c exec gnome-terminal -- cmus, mode "default"
   bindsym e exec emacs, mode "default"
   bindsym f exec firefox, mode "default"
   bindsym j exec eclipse, mode "default"

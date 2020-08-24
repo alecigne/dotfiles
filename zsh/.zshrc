@@ -1,6 +1,12 @@
 export ZSH=$HOME/.oh-my-zsh
 # ZSH_THEME="agnoster"
 ZSH_THEME=powerlevel10k/powerlevel10k
+
+# https://superuser.com/a/459057
+__git_files () { 
+    _wanted files expl 'local files' _files     
+}
+
 plugins=(git)
 
 source $ZSH/oh-my-zsh.sh

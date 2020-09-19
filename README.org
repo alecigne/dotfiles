@@ -6,8 +6,8 @@ My dotfiles, managed using the [[https://www.gnu.org/software/stow/][GNU Stow]] 
 - [[#dotfiles][Dotfiles?]]
 - [[#branching-strategy][Branching strategy]]
 - [[#about-gnu-stow][About GNU Stow]]
+- [[#system][System]]
 - [[#packages][Packages]]
-- [[#todos][TODOs]]
 
 * Dotfiles?
 
@@ -24,7 +24,7 @@ hosts.
 * Branching strategy
 
 Every environment I use has its own variation of dotfiles. The public,
-~master~ branch you see in this repository is my "main" config
+=master= branch you see in this repository is my "main" config
 (personal laptop and PC). Variations are kept in separate branches.
 
 * About GNU Stow
@@ -33,8 +33,21 @@ I use GNU Stow to manage symbolic links to my dotfiles. You can read a
 short GNU Stow tutorial in my [[https://lecigne.net/notes/stow.html][public notes]] (also available [[https://github.com/alecigne/notes/blob/master/stow.org][on Github]]
 as a "source" Org file).
 
-The ~stow.bash~ script automatically stows the packages in the home
+The =stow.bash= script automatically stows the packages in the home
 directory.
+
+* System
+
+I am moving towards the [[https://guix.gnu.org/][Guix]] package manager, installed on top of
+Debian. I am thus slowly replacing Debian-managed packages by
+Guix-managed packages. Guix will install the packages defined in [[file:packages/.packages/guix-manifest.scm][my
+manifest file]] by running this command:
+
+#+begin_src sh
+  guix package -m ~/.packages/guix-manifest.scm
+#+end_src
+
+(after stowing the =packages= directory).
 
 * Packages
 
@@ -172,7 +185,3 @@ My Xmodmap config.
 
 A great [[http://www.zsh.org/][shell]].
 
-* TODOs
-
-- [ ] Find alternative to binary files for fonts (use an install
-  script?)

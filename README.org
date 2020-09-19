@@ -40,11 +40,11 @@ directory.
 
 I am moving towards the [[https://guix.gnu.org/][Guix]] package manager, installed on top of
 Debian. I am thus slowly replacing Debian-managed packages by
-Guix-managed packages. Guix will install the packages defined in [[file:packages/.packages/guix-manifest.scm][my
-manifest file]] by running this command:
+Guix-managed packages. Guix will install the packages defined in [[file:packages/.packages/][my
+manifest files]] by running this command:
 
 #+begin_src sh
-  guix package -m ~/.packages/guix-manifest.scm
+  guix package -m ~/.packages/guix-manifest.scm -m ~/.packages/custom-manifest.scm
 #+end_src
 
 (after stowing the =packages= directory).

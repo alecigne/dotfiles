@@ -1,8 +1,6 @@
-alttab
 ant
 code
 curl
-filezilla
 git
 gnupg
 gparted
@@ -11,7 +9,6 @@ i3lock-fancy
 i3lock
 i3status
 imagemagick
-ledger
 lxappearance
 maven
 mupdf
@@ -21,14 +18,12 @@ ntfs-3g
 pandoc
 parted
 racket
-ranger
 recoll
 rofi
 sbcl
 skypeforlinux
 scdaemon
 syncthing
-tmux
 transmission-remote-gtk
 wine
 youtube-dl

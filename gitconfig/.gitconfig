@@ -2,3 +2,5 @@
 	name = Anthony Le Cigne
 [include]
 	path = .gitalias
+[core]
+	editor = emacsclient -t -a=

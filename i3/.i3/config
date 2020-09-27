@@ -3,6 +3,7 @@
 exec --no-startup-id gnome-settings-daemon
 exec --no-startup-id nm-applet
 exec --no-startup-id feh --bg-scale ~/.wallpapers/saturn.jpg
+exec --no-startup-id setxkbmap fr && xmodmap ~/.Xmodmap
 exec_always --no-startup-id numlockx on
 exec_always --no-startup-id alttab
 

@@ -13,6 +13,7 @@
    "ledger"
    "ncdu"
    "numlockx"
+   "pandoc"
    "password-store"
    "ranger"
    "redshift"

@@ -19,4 +19,5 @@
    "restic"
    "stow"
    "tmux"
-   "tree"))
+   "tree"
+   "vlc"))

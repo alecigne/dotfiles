@@ -414,6 +414,12 @@ Show who contributed, in descending order by number of commits
 :header-args: :noweb-ref workflow
 :END:
 
+Force-push should always be a =git push --force-with-lease=.
+
+#+begin_src conf
+  pushf = push --force-with-lease
+#+end_src
+
 Stash aliases for push & pop
 
 Note that if you are using an older version of git, before 2.16.0,

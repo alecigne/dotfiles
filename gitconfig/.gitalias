@@ -76,6 +76,7 @@ whois = "!sh -c 'git log --regexp-ignore-case -1 --pretty=\"format:%an <%ae>\n\"
 whatis = show --no-patch --pretty='tformat:%h (%s, %ad)' --date=short
 who = shortlog --summary --
 whorank = shortlog --summary --numbered --no-merges
+pushf = push --force-with-lease
 save = stash push
 pop = stash pop
 push1 = "!git push origin $(git branch-name)"

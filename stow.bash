@@ -1,6 +1,6 @@
 #!/bin/bash
 
-PACKAGES="cmus common-lisp cvim emacs fonts gitconfig gnupg i3 packages password-store rofi stumpwm wallpapers xmodmap zsh"
+PACKAGES="cmus common-lisp cvim emacs fonts gitconfig gnupg i3 packages password-store rofi stumpwm urxvt wallpapers xmodmap zsh"
 PACKAGES_NO_FOLDING="vscode"
 
 stow -v ${PACKAGES} -t ${HOME}

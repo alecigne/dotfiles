@@ -164,6 +164,10 @@ GnuPG, I prefer not to make these files public.
 
 My [[https://github.com/alecigne/.stumpwm.d][StumpWM config]], included as a submodule.
 
+** urxvt
+
+[[https://wiki.archlinux.org/index.php/rxvt-unicode][urxvt]], a lightweight terminal emulator.
+
 ** VSCode
 
 My [[https://code.visualstudio.com/][VSCode]] config. I keep ~$HOME/.config/Code/User/settings.json~ under

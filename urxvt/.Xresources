@@ -3,26 +3,26 @@ URxvt*scrollBar: false
 URxvt*termName: rxvt-256color
 URxvt.internalBorder: 20
 
-*background:   [97]#282a36
-*foreground:   #eff0eb
-*cursorColor:  #9aedfe
+UXTerm*color1*background: [97]#282a36
+UXTerm*foreground: #eff0eb
+UXTerm*cursorColor: #9aedfe
 
-*color0:      #33303b
-*color8:      #4f4b58
-*color1:      #ff5c57
-*color9:      #ff5c57
-*color2:      #5af78e
-*color10:     #5af78e
-*color3:      #f3f99d
-*color11:     #f3f99d
-*color4:      #57c7ff
-*color12:     #57c7ff
-*color5:      #ff6ac1
-*color13:     #ff6ac1
-*color6:      #9aedfe
-*color14:     #9aedfe
-*color7:      #eff0eb
-*color15:     #eff0eb
+UXTerm*color0: #33303b
+UXTerm*color8: #4f4b58
+UXTerm*color1: #ff5c57
+UXTerm*color9: #ff5c57
+UXTerm*color2: #5af78e
+UXTerm*color10: #5af78e
+UXTerm*color3: #f3f99d
+UXTerm*color11: #f3f99d
+UXTerm*color4: #57c7ff
+UXTerm*color12: #57c7ff
+UXTerm*color5: #ff6ac1
+UXTerm*color13: #ff6ac1
+UXTerm*color6: #9aedfe
+UXTerm*color14: #9aedfe
+UXTerm*color7: #eff0eb
+UXTerm*color15: #eff0eb
 
 URxvt*font: xft:Source Code Pro:size=10:antialias=true:hinting=true
 URxvt*boldFont: xft:Source Code Pro:size=12:antialias=true:hinting=true

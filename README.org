@@ -1,12 +1,16 @@
 #+TITLE: Dotfiles
 
-My dotfiles, managed using the [[https://www.gnu.org/software/stow/][GNU Stow]] symlink farm manager.
+My dotfiles (see definition below), managed using the [[https://www.gnu.org/software/stow/][GNU Stow]] symlink
+farm manager.
+
+This repo is used in conjunction with my [[https://github.com/alecigne/ansible-desktop][Ansible-based Debian
+configuration]] to document/automate the setup/configuration of my
+personal workstations.
 
 * Table of contents                                            :toc_1:noexport:
 - [[#dotfiles][Dotfiles?]]
 - [[#branching-strategy][Branching strategy]]
 - [[#about-gnu-stow][About GNU Stow]]
-- [[#system][System]]
 - [[#packages][Packages]]
 
 * Dotfiles?
@@ -23,31 +27,19 @@ hosts.
 
 * Branching strategy
 
-Every environment I use has its own variation of dotfiles. The public,
-=master= branch you see in this repository is my "main" config
-(personal laptop and PC). Variations are kept in separate branches.
+Every environment I use has its own variation of dotfiles. The
+=master= branch is my "main" config (personal
+workstations). Variations, such as dotfiles adapted to [[https://termux.com/][Termux]], are
+kept in separate branches.
 
 * About GNU Stow
 
 I use GNU Stow to manage symbolic links to my dotfiles. You can read a
-short GNU Stow tutorial in my [[https://lecigne.net/notes/stow.html][public notes]] (also available [[https://github.com/alecigne/notes/blob/master/stow.org][on Github]]
+short GNU Stow tutorial in my [[https://lecigne.net/notes/stow.html][public notes]] (also available [[https://github.com/alecigne/lecigne.net/blob/master/notes/stow.org][on Github]]
 as a "source" Org file).
 
 The =stow.bash= script automatically stows the packages in the home
 directory.
-
-* System
-
-I am moving towards the [[https://guix.gnu.org/][Guix]] package manager, installed on top of
-Debian. I am thus slowly replacing Debian-managed packages by
-Guix-managed packages. Guix will install the packages defined in [[file:packages/.packages/][my
-manifest files]] by running this command:
-
-#+begin_src sh
-  guix package -m ~/.packages/guix-manifest.scm -m ~/.packages/custom-manifest.scm
-#+end_src
-
-(after stowing the =packages= directory).
 
 * Packages
 
@@ -154,7 +146,7 @@ GnuPG, I prefer not to make these files public.
 
 ** Polybar
 
-[[https://github.com/polybar/polybar][Polybar]], a fast and easy-to-use status bar.
+[[https://github.com/polybar/polybar][Polybar]], a fast and easy-to-use status bar. Not used at the moment.
 
 ** Rofi
 

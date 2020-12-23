@@ -129,6 +129,10 @@ My [[https://www.gnupg.org/][GnuPG]] config files.
 My config for the [[https://i3wm.org/][i3]] window manager, including my [[https://i3wm.org/i3status/manpage.html][i3status]]
 configuration.
 
+** Ledger
+
+My [[https://www.ledger-cli.org/][Ledger]] configuration.
+
 ** Maven
 
 Settings for [[https://maven.apache.org/][Apache Maven]].

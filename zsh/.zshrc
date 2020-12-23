@@ -26,8 +26,5 @@ prompt_end() {
 
 export PATH="$HOME/bin:$PATH"
 
-# Personal environment variables
-export ALC_LEDGER_FILE="${HOME}/org/finances/ledger.ledger"
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

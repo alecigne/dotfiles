@@ -1,0 +1,4 @@
+--date-format %Y-%m-%d
+--start-of-week=1
+--real
+--file ~/org/finances/ledger.ledger

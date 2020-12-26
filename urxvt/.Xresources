@@ -1,7 +1,6 @@
 URxvt*borderless: 1
 URxvt*scrollBar: false
 URxvt*termName: rxvt-256color
-URxvt.internalBorder: 20
 
 URxvt*background: [97]#282a36
 URxvt*foreground: #eff0eb

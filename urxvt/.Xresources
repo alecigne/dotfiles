@@ -23,7 +23,7 @@ URxvt*color14: #9aedfe
 URxvt*color7: #eff0eb
 URxvt*color15: #eff0eb
 
-URxvt*font: xft:Source Code Pro:size=10:antialias=true:hinting=true
+URxvt*font: xft:Source Code Pro:size=10:antialias=true:hinting=true,xft:MesloLGS NF-10
 URxvt*boldFont: xft:Source Code Pro:size=12:antialias=true:hinting=true
 URxvt*italicFont: xft:Source Code Pro:style=Oblique:size=12:antialias=true:hinting=true
 URxvt*boldItalicFont: xft:Source Code Pro:style=Bold Oblique:size=12:antialias=true:hinting=true

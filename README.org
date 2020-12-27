@@ -152,6 +152,10 @@ GnuPG, I prefer not to make these files public.
 
 [[https://github.com/polybar/polybar][Polybar]], a fast and easy-to-use status bar. Not used at the moment.
 
+** Rclone
+
+My [[https://github.com/rclone/rclone][rclone]] configuration file (encrypted).
+
 ** Rofi
 
 [[https://github.com/davatorium/rofi][Rofi]], a window switcher, application launcher and dmenu replacement.

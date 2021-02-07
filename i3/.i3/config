@@ -163,8 +163,13 @@ bar {
   font pango:DejaVu Sans, Font Awesome 5 Free 10
   position bottom
   colors {
-    statusline #cccccc
-    focused_workspace   $blue        $blue      $white
+    #			Border		Background		Text color
+    background		#111111
+    statusline		#cccccc
+    focused_workspace   $blue		$blue			$white
+    inactive_workspace	#333333		#222222			#888888
+    urgent_workspace 	$pomegranate_8	$pomegranate_8		$pomegranate_1
+    binding_mode	$blue		$blue			$white
   }
 }
 
@@ -174,7 +179,7 @@ hide_edge_borders smart
 client.focused $blue $blue #ffffff #2e9ef4
 client.focused_inactive #333333 #5f676a #ffffff #484e50
 client.unfocused #222222 #222222 #888888 #292d2e
-client.urgent #2f343a #900000 #ffffff #900000
+client.urgent #2f343a $pomegranate_8 #ffffff $pomegranate_8
 
 # # color defines for zenburn styled i3
 set $blue     #285577
@@ -201,3 +206,226 @@ bindsym --release Shift+Print exec "screenshot -s ~/tmp/screenshots/"
 
 # Take a screenshot of a whole window and copy it to a clipboard
 bindsym --release Print exec "screenshot ~/tmp/screenshots/"
+
+# Colors - https://htmlcolorcodes.com/color-chart/flat-design-color-chart/
+set $pomegranate_1 #f9ebea
+set $pomegranate_2 #f2d7d5
+set $pomegranate_3 #e6b0aa
+set $pomegranate_4 #d98880
+set $pomegranate_5 #cd6155
+set $pomegranate_6 #c0392b
+set $pomegranate_7 #a93226
+set $pomegranate_8 #922b21
+set $pomegranate_9 #7b241c
+set $pomegranate_10 #641e16
+
+set $alizarin_1 #fdedec
+set $alizarin_2 #fadbd8
+set $alizarin_3 #f5b7b1
+set $alizarin_4 #f1948a
+set $alizarin_5 #ec7063
+set $alizarin_6 #e74c3c
+set $alizarin_7 #cb4335
+set $alizarin_8 #b03a2e
+set $alizarin_9 #943126
+set $alizarin_10 #78281f
+
+set $amethyst_1 #f5eef8
+set $amethyst_2 #ebdef0
+set $amethyst_3 #d7bde2
+set $amethyst_4 #c39bd3
+set $amethyst_5 #af7ac5
+set $amethyst_6 #9b59b6
+set $amethyst_7 #884ea0
+set $amethyst_8 #76448a
+set $amethyst_9 #633974
+set $amethyst_10 #512e5f
+
+set $wisteria_1 #f4ecf7
+set $wisteria_2 #e8daef
+set $wisteria_3 #d2b4de
+set $wisteria_4 #bb8fce
+set $wisteria_5 #a569bd
+set $wisteria_6 #8e44ad
+set $wisteria_7 #7d3c98
+set $wisteria_8 #6c3483
+set $wisteria_9 #5b2c6f
+set $wisteria_10 #4a235a
+
+set $belize_hole_1 #eaf2f8
+set $belize_hole_2 #d4e6f1
+set $belize_hole_3 #a9cce3
+set $belize_hole_4 #7fb3d5
+set $belize_hole_5 #5499c7
+set $belize_hole_6 #2980b9
+set $belize_hole_7 #2471a3
+set $belize_hole_8 #1f618d
+set $belize_hole_9 #1a5276
+set $belize_hole_10 #154360
+
+set $peter_river_1 #ebf5fb
+set $peter_river_2 #d6eaf8
+set $peter_river_3 #aed6f1
+set $peter_river_4 #85c1e9
+set $peter_river_5 #5dade2
+set $peter_river_6 #3498db
+set $peter_river_7 #2e86c1
+set $peter_river_8 #2874a6
+set $peter_river_9 #21618c
+set $peter_river_10 #1b4f72
+ 
+set $turquoise_1 #e8f8f5
+set $turquoise_2 #d1f2eb
+set $turquoise_3 #a3e4d7
+set $turquoise_4 #76d7c4
+set $turquoise_5 #48c9b0
+set $turquoise_6 #1abc9c
+set $turquoise_7 #17a589
+set $turquoise_8 #148f77
+set $turquoise_9 #117864
+set $turquoise_10 #0e6251
+
+set $green_sea_1 #e8f6f3
+set $green_sea_2 #d0ece7
+set $green_sea_3 #a2d9ce
+set $green_sea_4 #73c6b6
+set $green_sea_5 #45b39d
+set $green_sea_6 #16a085
+set $green_sea_7 #138d75
+set $green_sea_8 #117a65
+set $green_sea_9 #0e6655
+set $green_sea_10 #0b5345
+
+set $nephritis_1 #e9f7ef
+set $nephritis_2 #d4efdf
+set $nephritis_3 #a9dfbf
+set $nephritis_4 #7dcea0
+set $nephritis_5 #52be80
+set $nephritis_6 #27ae60
+set $nephritis_7 #229954
+set $nephritis_8 #1e8449
+set $nephritis_9 #196f3d
+set $nephritis_10 #145a32
+
+set $emerald_1 #eafaf1
+set $emerald_2 #d5f5e3
+set $emerald_3 #abebc6
+set $emerald_4 #82e0aa
+set $emerald_5 #58d68d
+set $emerald_6 #2ecc71
+set $emerald_7 #28b463
+set $emerald_8 #239b56
+set $emerald_9 #1d8348
+set $emerald_10 #186a3b
+
+set $sunflower_1 #fef9e7
+set $sunflower_2 #fcf3cf
+set $sunflower_3 #f9e79f
+set $sunflower_4 #f7dc6f
+set $sunflower_5 #f4d03f
+set $sunflower_6 #f1c40f
+set $sunflower_7 #d4ac0d
+set $sunflower_8 #b7950b
+set $sunflower_9 #9a7d0a
+set $sunflower_10 #7d6608
+
+set $orange_1 #fef5e7
+set $orange_2 #fdebd0
+set $orange_3 #fad7a0
+set $orange_4 #f8c471
+set $orange_5 #f5b041
+set $orange_6 #f39c12
+set $orange_7 #d68910
+set $orange_8 #b9770e
+set $orange_9 #9c640c
+set $orange_10 #7e5109
+
+set $carrot_1 #fdf2e9
+set $carrot_2 #fae5d3
+set $carrot_3 #f5cba7
+set $carrot_4 #f0b27a
+set $carrot_5 #eb984e
+set $carrot_6 #e67e22
+set $carrot_7 #ca6f1e
+set $carrot_8 #af601a
+set $carrot_9 #935116
+set $carrot_10 #784212
+
+set $pumpkin_1 #fbeee6
+set $pumpkin_2 #f6ddcc
+set $pumpkin_3 #edbb99
+set $pumpkin_4 #e59866
+set $pumpkin_5 #dc7633
+set $pumpkin_6 #d35400
+set $pumpkin_7 #ba4a00
+set $pumpkin_8 #a04000
+set $pumpkin_9 #873600
+set $pumpkin_10 #6e2c00
+
+set $clouds_1 #fdfefe
+set $clouds_2 #fbfcfc
+set $clouds_3 #f7f9f9
+set $clouds_4 #f4f6f7
+set $clouds_5 #f0f3f4
+set $clouds_6 #ecf0f1
+set $clouds_7 #d0d3d4
+set $clouds_8 #b3b6b7
+set $clouds_9 #979a9a
+set $clouds_10 #7b7d7d
+
+set $silver_1 #f8f9f9
+set $silver_2 #f2f3f4
+set $silver_3 #e5e7e9
+set $silver_4 #d7dbdd
+set $silver_5 #cacfd2
+set $silver_6 #bdc3c7
+set $silver_7 #a6acaf
+set $silver_8 #909497
+set $silver_9 #797d7f
+set $silver_10 #626567
+
+set $concrete_1 #f4f6f6
+set $concrete_2 #eaeded
+set $concrete_3 #d5dbdb
+set $concrete_4 #bfc9ca
+set $concrete_5 #aab7b8
+set $concrete_6 #95a5a6
+set $concrete_7 #839192
+set $concrete_8 #717d7e
+set $concrete_9 #5f6a6a
+set $concrete_10 #4d5656
+
+set $asbestos_1 #f2f4f4
+set $asbestos_2 #e5e8e8
+set $asbestos_3 #ccd1d1
+set $asbestos_4 #b2babb
+set $asbestos_5 #99a3a4
+set $asbestos_6 #7f8c8d
+set $asbestos_7 #707b7c
+set $asbestos_8 #616a6b
+set $asbestos_9 #515a5a
+set $asbestos_10 #424949
+
+set $wet_asphalt_1 #ebedef
+set $wet_asphalt_2 #d6dbdf
+set $wet_asphalt_3 #aeb6bf
+set $wet_asphalt_4 #85929e
+set $wet_asphalt_5 #5d6d7e
+set $wet_asphalt_6 #34495e
+set $wet_asphalt_7 #2e4053
+set $wet_asphalt_8 #283747
+set $wet_asphalt_9 #212f3c
+set $wet_asphalt_10 #1b2631
+
+set $midnight_blue_1 #eaecee
+set $midnight_blue_2 #d5d8dc
+set $midnight_blue_3 #abb2b9
+set $midnight_blue_4 #808b96
+set $midnight_blue_5 #566573
+set $midnight_blue_6 #2c3e50
+set $midnight_blue_7 #273746
+set $midnight_blue_8 #212f3d
+set $midnight_blue_9 #1c2833
+set $midnight_blue_10 #17202a
+
+set $white #ffffff

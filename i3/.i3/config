@@ -131,11 +131,12 @@ bindsym $mod+a mode "app"
 
 set $mode_system (l)ock, log(o)ut, (r)eboot, (p)oweroff
 
+# System mode
 mode "$mode_system" {
   bindsym l exec --no-startup-id i3lock-fancy, mode "default"
   bindsym o exec --no-startup-id i3-msg exit, mode "default"
-  bindsym r exec --no-startup-id systemctl reboot
-  bindsym p exec --no-startup-id systemctl poweroff
+  bindsym r exec --no-startup-id systemctl reboot, mode "default"
+  bindsym p exec --no-startup-id systemctl poweroff, mode "default"
   bindsym Control+g mode "default"
   bindsym Return mode "default"
   bindsym Escape mode "default"

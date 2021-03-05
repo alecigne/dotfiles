@@ -63,6 +63,10 @@ info [[https://common-lisp.net/project/asdf/asdf/Configuring-ASDF-to-find-your-s
 
 [[http://www.sbcl.org/][SBCL]], a high performance Common Lisp compiler.
 
+** config
+
+Dotfiles located in either =~= or =~/.config=.
+
 ** cVim
 
 [[https://chrome.google.com/webstore/detail/cvim/ihlenndgcmojhcghmfjfneahoeklbjjh][cVim]], an extension adding Vim-like bindings to Google Chrome.

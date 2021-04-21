@@ -201,3 +201,6 @@ bindsym --release Shift+Print exec "screenshot -s ~/tmp/screenshots/"
 
 # Take a screenshot of a whole window and copy it to a clipboard
 bindsym --release Print exec "screenshot ~/tmp/screenshots/"
+
+# Anki
+for_window [instance="anki"] floating enable

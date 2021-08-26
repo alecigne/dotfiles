@@ -12,7 +12,7 @@ fi
 
 # Stow
 
-PACKAGES="common-lisp config cvim emacs fonts gitconfig i3 ledger password-store rofi stumpwm urxvt wallpapers xmodmap zsh"
+PACKAGES="common-lisp cvim emacs fonts gitconfig i3 ledger password-store rofi stumpwm urxvt wallpapers xmodmap zsh"
 PACKAGES_NO_FOLDING="cmus gnupg rclone vscode"
 
 stow -v ${PACKAGES} -t ${HOME}

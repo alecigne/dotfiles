@@ -63,10 +63,6 @@ info [[https://common-lisp.net/project/asdf/asdf/Configuring-ASDF-to-find-your-s
 
 [[http://www.sbcl.org/][SBCL]], a high performance Common Lisp compiler.
 
-** config
-
-Dotfiles located in either =~= or =~/.config=.
-
 ** cVim
 
 [[https://chrome.google.com/webstore/detail/cvim/ihlenndgcmojhcghmfjfneahoeklbjjh][cVim]], an extension adding Vim-like bindings to Google Chrome.
@@ -141,10 +137,6 @@ My [[https://www.ledger-cli.org/][Ledger]] configuration.
 
 Settings for [[https://maven.apache.org/][Apache Maven]].
 
-** Packages
-
-My installed packages, a work in progress.
-
 ** Pass
 
 My passwords, managed with [[https://www.passwordstore.org/][pass]], the standard unix password
@@ -192,4 +184,3 @@ My Xmodmap config.
 ** Zsh
 
 A great [[http://www.zsh.org/][shell]].
-

@@ -135,11 +135,12 @@ mode "$mode_system" {
   bindsym o exec --no-startup-id i3-msg exit, mode "default"
   bindsym r exec --no-startup-id systemctl reboot, mode "default"
   bindsym p exec --no-startup-id systemctl poweroff, mode "default"
+  bindsym s exec --no-startup-id systemctl suspend, mode "default"
   bindsym Control+g mode "default"
   bindsym Return mode "default"
   bindsym Escape mode "default"
 }
-set $mode_system (l)ock, log(o)ut, (r)eboot, (p)oweroff
+set $mode_system (l)ock, log(o)ut, (r)eboot, (p)oweroff, (s)uspend
 bindsym $mod+F1 mode "$mode_system"
 
 # Music mode (when XF86 keys are not available)

@@ -90,3 +90,4 @@ discard = checkout --
 branches = branch -a
 tags = tag -n1 --list
 stashes = stash list
+tags-by-date = for-each-ref --sort=creatordate --format '%(refname) %(creatordate)' refs/tags

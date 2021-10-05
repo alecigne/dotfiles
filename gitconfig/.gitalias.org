@@ -467,6 +467,12 @@ Friendly wording is easier to remember.
   stashes = stash list
 #+END_SRC
 
+Tags by creation date.
+
+#+begin_src conf
+  tags-by-date = for-each-ref --sort=creatordate --format '%(refname) %(creatordate)' refs/tags
+#+end_src
+
 * Technical sections                                               :noexport:
 
 ** Main node

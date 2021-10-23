@@ -70,6 +70,12 @@ List all branches.
   ba = branch -a
 #+end_src
 
+List all remote branches.
+
+#+begin_src conf
+  br = branch -r
+#+end_src
+
 branch - edit the description
 
 #+BEGIN_SRC conf

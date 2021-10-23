@@ -18,6 +18,7 @@ aa = add --all
 ap = add --patch
 au = add --update
 ba = branch -a
+br = branch -r
 be = branch --edit-description
 bm = branch --merged
 bnm = branch --no-merged

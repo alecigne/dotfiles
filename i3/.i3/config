@@ -205,3 +205,7 @@ bindsym --release Print exec "screenshot ~/tmp/screenshots/"
 
 # Anki
 for_window [instance="anki"] floating enable
+
+# Brightness
+bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
+bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-

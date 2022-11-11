@@ -18,7 +18,7 @@ font pango:DejaVu Sans 10
 floating_modifier $mod
 
 # Terminal
-bindsym $mod+space exec urxvt
+bindsym $mod+space exec alacritty
 
 # Kill focused window
 bindsym $mod+q kill
@@ -61,7 +61,7 @@ bindsym $mod+p focus parent
 bindsym $mod+Shift+p focus child
 
 # Rename workspace
-bindsym $mod+n exec i3-input -F 'rename workspace to "%s"' -P 'New name for this workspace: ' 
+bindsym $mod+n exec i3-input -F 'rename workspace to "%s"' -P 'New name for this workspace: '
 
 # Switch to workspace
 bindsym $mod+ampersand workspace number 1

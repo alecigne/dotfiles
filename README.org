@@ -43,6 +43,13 @@ directory.
 
 * Packages
 
+** Alacritty
+:PROPERTIES:
+:CREATED:  [2022-11-11 Fri 13:37]
+:END:
+
+[[https://alacritty.org/][Alacritty]] is a cross-platform, OpenGL terminal emulator.
+
 ** cmus
 
 [[https://cmus.github.io][cmus]] is a small, fast and powerful console music player for Unix-like

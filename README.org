@@ -1,4 +1,4 @@
-#+TITLE: Dotfiles
+#+title: Dotfiles
 
 My dotfiles (see definition below), managed using the [[https://www.gnu.org/software/stow/][GNU Stow]] symlink
 farm manager.
@@ -77,29 +77,6 @@ Just load this once in Chrome:
 ** Emacs
 
 [[https://github.com/alecigne/.emacs.d][SwanEmacs]], my Org-based Emacs configuration, included as a submodule.
-
-** Fonts
-
-Originally included as submodules, but now managed as simple ~.otf~
-files.
-
-*** FontAwesome
-
-See [[https://github.com/FortAwesome/Font-Awesome][FontAwesome]] on Github.
-
-*** Fira
-
-See [[https://github.com/bBoxType/FiraSans][this repo]] and [[https://bboxtype.com/typefaces/FiraSans/][this page]]. This font is used in Firefox OS;
-however...
-
-#+begin_quote
-After Mozilla withdrew from the project, we integrated small bug
-fixes and several requests for the 4.3 release.
-#+end_quote
-
-*** Source Code Pro
-
-See [[https://github.com/adobe-fonts/source-code-pro][Source Code Pro]] on Github.
 
 ** Git
 

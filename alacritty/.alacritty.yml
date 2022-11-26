@@ -8,3 +8,10 @@ font:
   # bold_italic:
   #   family: Roboto Mono Bold Italic for Powerline
   size: 9
+
+shell:
+  program: /bin/zsh
+  args:
+    - -l
+    - -c
+    - "tmux attach || tmux"

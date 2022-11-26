@@ -138,7 +138,8 @@ My [[https://github.com/rclone/rclone][rclone]] configuration file (encrypted).
 
 ** Rofi
 
-[[https://github.com/davatorium/rofi][Rofi]], a window switcher, application launcher and dmenu replacement.
+[[https://github.com/davatorium/rofi][Rofi]], a window switcher, application launcher and dmenu
+replacement. Used in combination with [[https://github.com/erebe/greenclip][greenclip]].
 
 ** StumpWM
 

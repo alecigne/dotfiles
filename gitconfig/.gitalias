@@ -26,6 +26,7 @@ ob = checkout -b
 ca = commit --amend
 cane = commit --amend --no-edit
 acane = commit -a --amend --no-edit
+acaneme = commit -a --amend --no-edit --allow-empty-message
 cm = commit --message
 acm = commit -am
 cme = commit --message \"\" --allow-empty-message

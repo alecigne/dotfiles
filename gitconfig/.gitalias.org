@@ -1,4 +1,4 @@
-#+TITLE: Git aliases
+#+title: Git aliases
 
 * One-letter aliases
 :PROPERTIES:
@@ -128,6 +128,12 @@ Same, but add the files.
 
 #+begin_src conf
   acane = commit -a --amend --no-edit
+#+end_src
+
+Add, commit, amend, no edit, message empty.
+
+#+begin_src conf
+  acaneme = commit -a --amend --no-edit --allow-empty-message
 #+end_src
 
 Commit with a message

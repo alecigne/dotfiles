@@ -211,3 +211,6 @@ for_window [instance="anki"] floating enable
 # Brightness
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
+
+# xcalc
+for_window [class="XCalc"] floating enable, move absolute position center

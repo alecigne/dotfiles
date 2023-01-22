@@ -57,7 +57,7 @@ operating systems.
 
 ** Common Lisp
 
-My Common Lisp (SBCL) configuration.
+My [[https://en.wikipedia.org/wiki/Common_Lisp][Common Lisp]] (SBCL) configuration.
 
 *** ASDF
 
@@ -83,22 +83,22 @@ Just load this once in Chrome:
 
 ** Emacs
 
-[[https://github.com/alecigne/.emacs.d][SwanEmacs]], my Org-based Emacs configuration, included as a submodule.
+[[https://github.com/alecigne/.emacs.d][My Emacs configuration]], included as a submodule.
 
 ** Git
 
-My [[https://git-scm.com/][Git]] configuration. Aliases include a selection of ~git~ aliases
-from the [[https://github.com/GitAlias/gitalias][gitalias]] repository, organized with ~org-babel~ for more
+My [[https://git-scm.com/][Git]] configuration. Aliases include a selection of =git= aliases
+from the [[https://github.com/GitAlias/gitalias][gitalias]] repository, organized with =org-babel= for more
 readability. Please go to the original source for reference.
 
-About the ~.gitalias.org~ file:
+About the =.gitalias.org= file:
 
 - Every section has a Noweb reference.
 
 - Everything is then fed to a main code block through Noweb (see
   the bottom of the raw Org file).
 
-- The result after ~org-babel-tangle~ is a ~.gitalias~ file.
+- The result after ~org-babel-tangle~ is a =.gitalias= file.
 
 ** GnuPG
 
@@ -125,7 +125,7 @@ Settings for [[https://maven.apache.org/][Apache Maven]].
 
 My passwords, managed with [[https://www.passwordstore.org/][pass]], the standard unix password
 manager. This is a private submodule pointing to a repository hosted
-on my Raspberry Pi. Although passwords are safely encrypted with
+on my local network. Although passwords are safely encrypted with
 GnuPG, I prefer not to make these files public.
 
 ** Polybar
@@ -143,11 +143,13 @@ replacement. Used in combination with [[https://github.com/erebe/greenclip][gree
 
 ** StumpWM
 
-My [[https://github.com/alecigne/.stumpwm.d][StumpWM config]], included as a submodule.
+My [[https://github.com/alecigne/.stumpwm.d][StumpWM config]], included as a submodule. For when I'm in the mood
+to experiment.
 
 ** urxvt
 
-[[https://wiki.archlinux.org/index.php/rxvt-unicode][urxvt]], a lightweight terminal emulator.
+[[https://wiki.archlinux.org/index.php/rxvt-unicode][urxvt]], a lightweight terminal emulator. Not used at the moment,
+replaced by [[*Alacritty][Alacritty]].
 
 ** VSCode
 
@@ -164,7 +166,7 @@ Good resources:
 
 ** Xmodmap
 
-My Xmodmap config.
+My [[https://wiki.archlinux.org/title/xmodmap][Xmodmap]] config.
 
 ** Zsh
 

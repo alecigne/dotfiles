@@ -146,6 +146,13 @@ replacement. Used in combination with [[https://github.com/erebe/greenclip][gree
 My [[https://github.com/alecigne/.stumpwm.d][StumpWM config]], included as a submodule. For when I'm in the mood
 to experiment.
 
+** tmux
+:PROPERTIES:
+:CREATED:  [2023-01-28 Sat 12:20]
+:END:
+
+[[https://github.com/tmux/tmux][tmux]], a terminal multiplexer.
+
 ** urxvt
 
 [[https://wiki.archlinux.org/index.php/rxvt-unicode][urxvt]], a lightweight terminal emulator. Not used at the moment,

@@ -1,12 +1,6 @@
 font:
   normal:
-    family: Source Code Pro for Powerline
-  # bold:
-  #   family: Roboto Mono Bold for Powerline
-  # italic:
-  #   family: Roboto Mono Italic for Powerline
-  # bold_italic:
-  #   family: Roboto Mono Bold Italic for Powerline
+    family: JetBrains Mono
   size: 9
 
 shell:

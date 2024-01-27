@@ -1,0 +1,9 @@
+[font]
+size = 9
+
+[font.normal]
+family = "JetBrains Mono"
+
+[shell]
+args = ["-l", "-c", "tmux attach || tmux"]
+program = "/bin/zsh"

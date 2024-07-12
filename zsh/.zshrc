@@ -31,3 +31,51 @@ export PATH="$HOME/.cargo/bin:$HOME/bin:$PATH"
 
 # Do not use cowsay with Ansible :)
 export ANSIBLE_NOCOWS=1
+
+########
+# Kube #
+########
+
+if command -v kubectl >/dev/null 2>&1; then
+  # pods
+
+  alias k='kubectl -n microservices '
+  alias kgp='k get pods'
+  alias kgpg='k get pods | grep -i '
+  alias kdp='k describe pods'
+
+  function kgpa {
+    kgp -l app=${1}
+  }
+
+  # logs
+
+  alias kl='k logs'
+  alias klf='k logs --follow'
+
+  function kla {
+    k logs -l app=${1}
+  }
+
+  function klaf {
+    k logs --follow -l app=${1}
+  }
+
+  # config
+
+  alias kc='k config'
+  alias kcu='k config use-context'
+  alias kcupreprod='k config use-context aks-preprod'
+  alias kcuprod='k config use-context aks-prod'
+  alias kcurec='k config use-context aks-rec'
+
+  export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+  # forwarding
+
+  function kf {
+    sudo -E kubefwd svc -l "app in (${1})" -n microservices
+  }
+fi

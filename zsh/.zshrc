@@ -69,13 +69,10 @@ if command -v kubectl >/dev/null 2>&1; then
   alias kcuprod='k config use-context aks-prod'
   alias kcurec='k config use-context aks-rec'
 
-  export NVM_DIR="$HOME/.nvm"
-  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
   # forwarding
 
   function kf {
     sudo -E kubefwd svc -l "app in (${1})" -n microservices
   }
 fi
+

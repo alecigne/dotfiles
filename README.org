@@ -9,7 +9,6 @@ personal workstations.
 
 * Table of contents                                            :toc_1:noexport:
 - [[#dotfiles][Dotfiles?]]
-- [[#branching-strategy][Branching strategy]]
 - [[#about-gnu-stow][About GNU Stow]]
 - [[#packages][Packages]]
 
@@ -24,13 +23,6 @@ practice to track dotfiles with a version control system such as Git
 to keep track of changes and synchronize dotfiles across various
 hosts.
 #+end_quote
-
-* Branching strategy
-
-Every environment I use has its own variation of dotfiles. The
-=master= branch is my "main" config (personal
-workstations). Variations, such as dotfiles adapted to [[https://termux.com/][Termux]], are
-kept in separate branches.
 
 * About GNU Stow
 
@@ -112,6 +104,14 @@ My [[https://www.gnupg.org/][GnuPG]] config files.
 
 My config for the [[https://i3wm.org/][i3]] window manager, including my [[https://i3wm.org/i3status/manpage.html][i3status]]
 configuration.
+
+** Irssi
+:PROPERTIES:
+:CREATED:  [2024-08-11 Sun 00:32]
+:END:
+
+[[https://irssi.org/][Irssi]] is a modular text mode chat client. A good occasional
+alternative to [[https://www.gnu.org/software/emacs/erc.html][ERC]] :)
 
 ** Ledger
 

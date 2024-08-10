@@ -1,1 +1,1 @@
-ms-python.python
+esbenp.prettier-vscode

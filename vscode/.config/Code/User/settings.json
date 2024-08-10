@@ -3,5 +3,11 @@
     "workbench.startupEditor": "newUntitledFile",
     "workbench.colorTheme": "Monokai",
     "telemetry.enableTelemetry": false,
-    "telemetry.enableCrashReporter": false
+    "telemetry.enableCrashReporter": false,
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[css]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
 }

@@ -1,154 +1,21 @@
 servers = (
-  { address = "irc.dal.net"; chatnet = "DALnet"; port = "6667"; },
-  {
-    address = "ssl.efnet.org";
-    chatnet = "EFNet";
-    port = "9999";
-    use_tls = "yes";
-    tls_verify = "no";
-  },
-  {
-    address = "irc.esper.net";
-    chatnet = "EsperNet";
-    port = "6697";
-    use_tls = "yes";
-    tls_verify = "yes";
-  },
   {
     address = "irc.libera.chat";
-    chatnet = "liberachat";
+    chatnet = "LiberaChat";
     port = "6697";
     use_tls = "yes";
     tls_verify = "yes";
-  },
-  {
-    address = "irc.gamesurge.net";
-    chatnet = "GameSurge";
-    port = "6667";
-  },
-  {
-    address = "ssl.ircnet.ovh";
-    chatnet = "IRCnet";
-    port = "6697";
-    use_tls = "yes";
-    tls_verify = "yes";
-  },
-  { address = "open.ircnet.net"; chatnet = "IRCnet"; port = "6667"; },
-  {
-    address = "irc.ircsource.net";
-    chatnet = "IRCSource";
-    port = "6667";
-  },
-  { address = "irc.netfuze.net"; chatnet = "NetFuze"; port = "6667"; },
-  {
-    address = "irc.oftc.net";
-    chatnet = "OFTC";
-    port = "6697";
-    use_tls = "yes";
-    tls_verify = "yes";
-  },
-  {
-    address = "irc.quakenet.org";
-    chatnet = "QuakeNet";
-    port = "6667";
-  },
-  {
-    address = "irc.rizon.net";
-    chatnet = "Rizon";
-    port = "6697";
-    use_tls = "yes";
-    tls_verify = "yes";
-  },
-  { address = "silc.silcnet.org"; chatnet = "SILC"; port = "706"; },
-  {
-    address = "irc.undernet.org";
-    chatnet = "Undernet";
-    port = "6667";
   }
 );
 
 chatnets = {
-  DALnet = {
-    type = "IRC";
-    max_kicks = "4";
-    max_msgs = "20";
-    max_whois = "30";
-  };
-  EFNet = {
+  LiberaChat = {
     type = "IRC";
     max_kicks = "1";
     max_msgs = "4";
-    max_whois = "1";
-  };
-  EsperNet = {
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "4";
-    max_whois = "1";
-  };
-  liberachat = {
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "4";
-    max_whois = "1";
-  };
-  GameSurge = {
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "1";
-    max_whois = "1";
-  };
-  IRCnet = {
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "1";
-    max_whois = "1";
-  };
-  IRCSource = {
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "4";
-    max_whois = "1";
-  };
-  NetFuze = {
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "1";
-    max_whois = "1";
-  };
-  OFTC = { type = "IRC"; max_kicks = "1"; max_msgs = "1"; max_whois = "1"; };
-  QuakeNet = {
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "1";
-    max_whois = "1";
-  };
-  Rizon = {
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "1";
-    max_whois = "1";
-  };
-  SILC = { type = "SILC"; };
-  Undernet = {
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "1";
     max_whois = "1";
   };
 };
-
-channels = (
-  { name = "#lobby"; chatnet = "EsperNet"; autojoin = "No"; },
-  { name = "#libera"; chatnet = "liberachat"; autojoin = "No"; },
-  { name = "#irssi"; chatnet = "liberachat"; autojoin = "No"; },
-  { name = "#gamesurge"; chatnet = "GameSurge"; autojoin = "No"; },
-  { name = "#irssi"; chatnet = "IRCNet"; autojoin = "No"; },
-  { name = "#ircsource"; chatnet = "IRCSource"; autojoin = "No"; },
-  { name = "#netfuze"; chatnet = "NetFuze"; autojoin = "No"; },
-  { name = "#oftc"; chatnet = "OFTC"; autojoin = "No"; },
-  { name = "silc"; chatnet = "SILC"; autojoin = "No"; }
-);
 
 aliases = {
   ATAG = "WINDOW SERVER";
@@ -307,9 +174,11 @@ statusbar = {
     };
   };
 };
+
 settings = {
   core = {
     user_name = "alc";
     nick = "alc";
+    real_name = "alc";
   };
 };

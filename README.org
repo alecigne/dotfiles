@@ -73,6 +73,13 @@ Just load this once in Chrome:
   let configpath = '/path/to/.cvimrc'
 #+end_example
 
+** Dunst
+:PROPERTIES:
+:CREATED:  [2024-08-11 Sun 11:56]
+:END:
+
+[[https://dunst-project.org/][Dunst]] is a lightweight notification daemon.
+
 ** Emacs
 
 [[https://github.com/alecigne/.emacs.d][My Emacs configuration]], included as a submodule.

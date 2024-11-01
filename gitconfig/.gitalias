@@ -1,28 +1,20 @@
 [alias]
 
 a = add
-b = branch
-c = commit
-d = diff
-f = fetch
-g = grep
-h = show
-l = log
-m = merge
-o = checkout
-p = pull
-r = remote
-s = status
-w = whatchanged
 aa = add --all
-ap = add --patch
-au = add --update
+ap = add -p
+b = branch
 ba = branch -a
+branches = ba
 br = branch -r
-be = branch --edit-description
-bm = branch --merged
-bnm = branch --no-merged
+remote-branches = br
+bv = b -v
+bvv = b -vv
+o = checkout
 ob = checkout -b
+oc = "!f() { git checkout $(git show-ref --verify --quiet refs/heads/\"$1\" || echo '-b') \"$1\"; }; f"
+ow = !git oc $(date +%Y-w%V)
+c = commit
 ca = commit --amend
 cane = commit --amend --no-edit
 acane = commit -a --amend --no-edit
@@ -32,67 +24,39 @@ acm = commit -am
 cme = commit --message \"\" --allow-empty-message
 acme = commit -am \"\" --allow-empty-message
 wip = !git add -A && git commit -m "wip"
+author = cane --author
+apply-author = "!git author \"$(git config user.name) <$(git config user.email)>\""
+d = diff
 dc = diff --cached
+f = fetch
 fpt = fetch --prune --tags
-lg = log --graph
+l = log
 lo = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short
-lp = log --patch
-lfp = log --first-parent
-lt = log --topo-order
 ll = log --graph --topo-order --abbrev-commit --date=short --decorate --all --boundary --pretty=format:'%Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Cblue[%cn]%Creset %Cblue%G?%Creset'
-log-changes = log --oneline --reverse
-log-fresh = log ORIG_HEAD.. --stat --no-merges
-log-like = log --graph --topo-order --abbrev-commit --date=short --decorate --all --boundary --pretty=format:'%Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Cblue[%cn]%Creset %Cblue%G?%Creset'
-log-local = log --date=local
-log-my = !git log --author $(git config user.email)
-log-graph = log --graph --all --oneline --decorate
-log-first-date = !"git log --date-order --format=%cI | tail -1"
-log-latest-date = log -1 --date-order --format=%cI
-log-count-per-date-format = "!f() { d=\"$1\"; shift; git log $@ --format=oneline --format="%ad" --date=format:\"$d\" | awk '{a[$0]++}END{for(i in a){print i, a[i]}}' | sort; }; f"
-log-hour  = log --since "1 hour ago"
-log-day   = log --since "1 day ago"
-log-week  = log --since "1 week ago"
-log-month = log --since "1 month ago"
-log-year  = log --since "1 year ago"
-log-my-hour  = log --author $(git config user.email) --since "1 hour ago"
-log-my-day   = log --author $(git config user.email) --since "1 day ago"
-log-my-week  = log --author $(git config user.email) --since "1 week ago"
-log-my-month = log --author $(git config user.email) --since "1 month ago"
-log-my-year  = log --author $(git config user.email) --since "1 year ago"
-log-count-per-hour          = "!f() { git log-count-per-date-format \"%Y-%m-%dT%H\" $@ ; }; f"
-log-count-per-day           = "!f() { git log-count-per-date-format \"%Y-%m-%d\" $@ ; }; f"
-log-count-per-week          = "!f() { git log-count-per-date-format \"%Y#%V\" $@; }; f"
-log-count-per-month         = "!f() { git log-count-per-date-format \"%Y-%m\" $@ ; }; f"
-log-count-per-year          = "!f() { git log-count-per-date-format \"%Y\" $@ ; }; f"
-log-count-per-hour-of-day   = "!f() { git log-count-per-date-format \"%H\" $@; }; f"
-log-count-per-day-of-week   = "!f() { git log-count-per-date-format \"%u\" $@; }; f"
-log-count-per-week-of-year  = "!f() { git log-count-per-date-format \"%V\" $@; }; f"
+m = merge
 mfo = merge --ff-only
 mnf = merge --no-ff
-pf = pull --ff-only
-pr = pull --rebase
-rb = rebase
-rba = rebase --abort
-rbc = rebase --continue
-hh = show @
+p = pull
+u = push
+uf = push --force-with-lease
+force-push = uf
+r = rebase
+rb = r
+ra = rebase --abort
+rba = ra
+rc = rebase --continue
+rbc = rc
+e = reset
+es = reset --soft HEAD~1
+undo-commit = es
+eh = reset --hard HEAD~1
+undo-commit-hard = eh
+uncommit = eh
+h = show
+s = status
 ss = status --short
 ssb = status --short --branch
-whois = "!sh -c 'git log --regexp-ignore-case -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -"
-whatis = show --no-patch --pretty='tformat:%h (%s, %ad)' --date=short
-who = shortlog --summary --
-whorank = shortlog --summary --numbered --no-merges
-pushf = push --force-with-lease
-save = stash push
-pop = stash pop
-push1 = "!git push origin $(git branch-name)"
-pull1 = "!git pull origin $(git branch-name)"
-undo-commit        = reset --soft HEAD~1
-undo-commit-hard   = reset --hard HEAD~1
-uncommit = reset --soft HEAD~1
-unadd = reset HEAD
-unstage = reset HEAD
-discard = checkout --
-branches = branch -a
+t = tag
+td = tag -d
 tags = tag -n1 --list
-stashes = stash list
 tags-by-date = for-each-ref --sort=creatordate --format '%(refname) %(creatordate)' refs/tags

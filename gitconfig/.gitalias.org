@@ -1,166 +1,243 @@
 #+title: Git aliases
 
-* One-letter aliases
+* About
 :PROPERTIES:
-:header-args: :noweb-ref oneletter
+:CREATED:  [2024-11-01 Fri 12:35]
 :END:
 
-One letter alias for our most frequent commands.
+These aliases were originally inspired from the [[https://github.com/GitAlias/gitalias][gitalias]] repo. They
+were then tailored to my usage.
 
-Guidelines: these aliases do not use options, because we want these
-aliases to be easy to compose and use in many ways.
+The source of truth is Git commands, so aliases are organized by
+commands in this file.
 
-#+begin_src conf
-  a = add
-  b = branch
-  c = commit
-  d = diff
-  f = fetch
-  g = grep
-  h = show
-  l = log
-  m = merge
-  o = checkout
-  p = pull
-  r = remote
-  s = status
-  w = whatchanged
+** Shortcut aliases vs. command aliases
+:PROPERTIES:
+:CREATED:  [2024-11-01 Fri 13:32]
+:END:
+
+Generally speaking, these aliases can be divided into "shortcut
+aliases" and "command aliases". A shortcut alias will be fast to type,
+whereas a command alias will be like a new Git command: a
+user-friendly way to express some Git action that would otherwise be
+accomplished with a vanilla Git command + options.
+
+For example, ~m~ is a shortcut for the default ~merge~ command. ~mfo~
+is a shortcut for the ~merge~ command with the ~--ff-only~
+option. ~merge-ff~ /could/ be the equivalent "command alias".
+
+** Raw Git commands
+:PROPERTIES:
+:CREATED:  [2024-11-01 Fri 13:33]
+:END:
+
+Default, raw Git commands I use the most frequently are one-letter
+shortcut aliases. They don't have options, because they should be as
+close as the original command as possible.
+
+|--------+------------|
+| Letter | Command    |
+|--------+------------|
+| ~a~    | ~add~      |
+| ~b~    | ~branch~   |
+| ~c~    | ~commit~   |
+| ~d~    | ~diff~     |
+| ~e~    | ~reset~    |
+| ~f~    | ~fetch~    |
+| ~h~    | ~show~     |
+| ~l~    | ~logs~     |
+| ~m~    | ~merge~    |
+| ~o~    | ~checkout~ |
+| ~p~    | ~pull~     |
+| ~r~    | ~rebase~   |
+| ~s~    | ~status~   |
+| ~t~    | ~tag~      |
+| ~u~    | ~push~     |
+|--------+------------|
+
+** Git commands with options
+:PROPERTIES:
+:CREATED:  [2024-11-01 Fri 13:33]
+:END:
+
+Git commands with options are always multi-letter shortcut
+aliases. They should be in the same order as the command followed by
+its options:
+
+- Right: ~fb = foo --bar~
+- Wrong: ~bf = foo --bar~
+
+As previously stated, Git commands with options can also have command
+aliases.
+
+** Reusing aliases
+:PROPERTIES:
+:CREATED:  [2024-11-01 Fri 13:36]
+:END:
+
+Aliases can be built on top of other aliases. This is especially true
+for command aliases. For example:
+
+#+begin_src conf :noexport
+  ba = branch -a
+  branches = ba
 #+end_src
 
-* Short aliases
+Note that Git doesn't care about the order in which aliases are
+defined. However, for clarity, aliases are always defined first before
+being reused in another.
 
-Generally speaking, the alias should be in the same order as the
-command name followed by its options.
-
-- Right: fb = foo --bar
-- Wrong: bf = foo --bar
-
-** ~add~
+* ~add~
 :PROPERTIES:
 :header-args: :noweb-ref add
 :END:
 
-add all
+~a~: main alias.
+
+#+begin_src conf
+  a = add
+#+end_src
+
+~aa~: add all.
 
 #+begin_src conf
   aa = add --all
 #+end_src
 
-add by patch - looks at each change, and asks if we want to put it in
-the repo.
+~ap~: add by patch - looks at each change, and asks if we want to put
+it in the repo.
 
 #+begin_src conf
-  ap = add --patch
+  ap = add -p
 #+end_src
 
-add just the files that are updated.
-
-#+begin_src conf
-  au = add --update
-#+end_src
-
-** ~branch~
+* ~branch~
 :PROPERTIES:
 :header-args: :noweb-ref branch
 :END:
 
-List all branches.
+~b~: main alias.
+
+#+begin_src conf
+  b = branch
+#+end_src
+
+~ba~ / ~branches~: list all branches.
 
 #+begin_src conf
   ba = branch -a
+  branches = ba
 #+end_src
 
-List all remote branches.
+~br~ / ~remote-branches~: list all remote branches.
 
 #+begin_src conf
   br = branch -r
+  remote-branches = br
 #+end_src
 
-branch - edit the description
+~bv~ / ~bvv~: show branches, be verbose.
 
 #+begin_src conf
-  be = branch --edit-description
+  bv = b -v
+  bvv = b -vv
 #+end_src
 
-branch and only list branches whose tips are reachable from the
-specified commit (HEAD if not specified).
-
-#+begin_src conf
-  bm = branch --merged
-#+end_src
-
-branch and only list branches whose tips are not reachable from the
-specified commit (HEAD if not specified).
-
-#+begin_src conf
-  bnm = branch --no-merged
-#+end_src
-
-** ~checkout~
+* ~checkout~
 :PROPERTIES:
 :header-args: :noweb-ref checkout
 :END:
 
-Checkout in a new branch.
+~o~: main alias.
+
+#+begin_src conf
+  o = checkout
+#+end_src
+
+~ob~: checkout in a new branch.
 
 #+begin_src conf
   ob = checkout -b
 #+end_src
 
-** ~commit~
+~oc~: checkout in a branch and create it if it doesn't exist. Taken
+from [[https://stackoverflow.com/a/35368157][here]].
+
+#+begin_src conf
+  oc = "!f() { git checkout $(git show-ref --verify --quiet refs/heads/\"$1\" || echo '-b') \"$1\"; }; f"
+#+end_src
+
+~ow~: checkout in the current week branch, creating it if it doesn't
+exist.
+
+#+begin_src conf
+  ow = !git oc $(date +%Y-w%V)
+#+end_src
+
+* ~commit~
 :PROPERTIES:
 :header-args: :noweb-ref commit
 :END:
 
-Amend the tip of the current branch rather than creating a new commit.
+# TODO Simplify/clarify these aliases.
+
+~c~: main alias.
+
+#+begin_src conf
+  c = commit
+#+end_src
+
+~ca~: amend the tip of the current branch rather than creating a new
+commit.
 
 #+begin_src conf
   ca = commit --amend
 #+end_src
 
-Amend the tip of the current branch, and do not edit the message.
+~cane~: amend the tip of the current branch, and do not edit the
+message.
 
 #+begin_src conf
   cane = commit --amend --no-edit
 #+end_src
 
-Same, but add the files.
+~acane~: same, but add the files.
 
 #+begin_src conf
   acane = commit -a --amend --no-edit
 #+end_src
 
-Add, commit, amend, no edit, message empty.
+~acaneme~: Add, commit, amend, no edit, message empty.
 
 #+begin_src conf
   acaneme = commit -a --amend --no-edit --allow-empty-message
 #+end_src
 
-Commit with a message
+~cm~: Commit with a message
 
 #+begin_src conf
   cm = commit --message
 #+end_src
 
-Add and commit with message.
+~acm~: Add and commit with message.
 
 #+begin_src conf
   acm = commit -am
 #+end_src
 
-Commit with an empty message (aka "Git as a filesystem")
+~cme~: commit with an empty message (aka "Git as a filesystem")
 
 #+begin_src conf
   cme = commit --message \"\" --allow-empty-message
 #+end_src
 
-Add and commit with an empty message.
+~acme~: add and commit with an empty message.
 
 #+begin_src conf
   acme = commit -am \"\" --allow-empty-message
 #+end_src
 
-Add and commit with a "wip" message. The =!= is explained [[https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases][here]]:
+~wip~: add and commit with a "wip" message. The =!= is explained [[https://git-scm.com/book/en/v2/Git-Basics-Git-Aliases][here]]:
 
 #+begin_quote
 As you can tell, Git simply replaces the new command with whatever you
@@ -174,141 +251,214 @@ with a Git repository.
   wip = !git add -A && git commit -m "wip"
 #+end_src
 
-** ~diff~
+~author~: changes the author of the last commit. Used in combination
+with ~cane~, for ~commit --amend --no-edit~.
+
+#+begin_src conf
+  author = cane --author
+#+end_src
+
+~fix-author~: apply current user's information to the last commit. I
+use it when I commit with a wrong configuration with =user.name= and
+=user.email=.
+
+#+begin_src conf
+  apply-author = "!git author \"$(git config user.name) <$(git config user.email)>\""
+#+end_src
+
+* ~diff~
 :PROPERTIES:
 :header-args: :noweb-ref diff
 :END:
 
-Show staged changes against the current HEAD.
+~d~: main alias.
+
+#+begin_src conf
+  d = diff
+#+end_src
+
+~dc~: show staged changes against the current HEAD.
 
 #+begin_src conf
   dc = diff --cached
 #+end_src
 
-** ~fetch~
+* ~fetch~
 :PROPERTIES:
 :header-args: :noweb-ref fetch
 :END:
 
-Fetch the remote, remove any remote-tracking references that no longer
-exist on the remote (except tags) and fetch all tags from the remote.
+~f~: main alias.
+
+#+begin_src conf
+  f = fetch
+#+end_src
+
+~fpt~: fetch the remote, remove any remote-tracking references that no
+longer exist on the remote (except tags) and fetch all tags from the
+remote.
 
 #+begin_src conf
   fpt = fetch --prune --tags
 #+end_src
 
-** ~log~
+* ~log~
 :PROPERTIES:
 :header-args: :noweb-ref log
 :END:
 
-~log~ with a text-based graphical representation of the commit
-history.
+~l~: main alias.
 
 #+begin_src conf
-  lg = log --graph
+  l = log
 #+end_src
 
-~log~ with one line per item and a pretty format (taken from [[https://stackoverflow.com/questions/1441010/the-shortest-possible-output-from-git-log-containing-author-and-date#comment11498716_1441062][here]]).
+~lo~: ~log~ with one line per item and a pretty format (taken from
+[[https://stackoverflow.com/questions/1441010/the-shortest-possible-output-from-git-log-containing-author-and-date#comment11498716_1441062][here]]).
 
 #+begin_src conf
   lo = log --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short
 #+end_src
 
-~log~ with patch generation.
-
-#+begin_src conf
-  lp = log --patch
-#+end_src
-
-~log~ with first parent, useful for team branch that only accepts pull
-requests
-
-#+begin_src conf
-  lfp = log --first-parent
-#+end_src
-
-~log~ with items appearing in topological order, i.e. descendant
-commits are shown before their parents.
-
-#+begin_src conf
-  lt = log --topo-order
-#+end_src
-
-~log~ like - we like this summarization our key performance
-indicators. Also aliased as `log-like`.
+~ll~: ~log~ with a pretty format.
 
 #+begin_src conf
   ll = log --graph --topo-order --abbrev-commit --date=short --decorate --all --boundary --pretty=format:'%Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Cblue[%cn]%Creset %Cblue%G?%Creset'
 #+end_src
 
-** ~merge~
+* ~merge~
 :PROPERTIES:
 :CREATED:  [2024-02-23 Fri 16:00]
 :header-args: :noweb-ref merge
 :END:
 
+~m~: main alias.
+
+#+begin_src conf
+  m = merge
+#+end_src
+
+~mfo~: merge only if fast-forward is possible.
+
 #+begin_src conf
   mfo = merge --ff-only
+#+end_src
+
+~mnf~: merge without fast-forward (create a merge commit).
+
+#+begin_src conf
   mnf = merge --no-ff
 #+end_src
 
-** ~pull~
+* ~pull~
 :PROPERTIES:
 :header-args: :noweb-ref pull
 :END:
 
-~pull~ if a merge can be resolved as a fast-forward, otherwise fail.
+~p~: main alias.
 
 #+begin_src conf
-  pf = pull --ff-only
+  p = pull
 #+end_src
 
-~pull with rebase~ - to provide a cleaner, linear, bisectable history.
+* ~push~
+:PROPERTIES:
+:CREATED:  [2024-11-01 Fri 12:55]
+:header-args: :noweb-ref push
+:END:
+
+~u~: main alias
 
 #+begin_src conf
-  pr = pull --rebase
+  u = push
 #+end_src
 
-** ~rebase~
+~uf~ / ~force-push~: force-push with the ~--force-with-lease~
+option. This option is slightly more secure this it prevents
+overwriting work that hasn't been fetched.
+
+#+begin_src conf
+  uf = push --force-with-lease
+  force-push = uf
+#+end_src
+
+* ~rebase~
 :PROPERTIES:
 :header-args: :noweb-ref rebase
 :END:
 
-rebase - forward-port local commits to the updated upstream head.
+# TODO Remove 'rb' aliases when I'll be used to 'r'.
+
+~r~ / ~rb~: main alias. ~rb~ is an exception to my one-letter rule,
+for compatibility with my muscle memory :)
 
 #+begin_src conf
-  rb = rebase
+  r = rebase
+  rb = r
 #+end_src
 
-rebase abort - cancel the rebasing process
+~ra~: cancel the rebasing process.
 
 #+begin_src conf
-  rba = rebase --abort
+  ra = rebase --abort
+  rba = ra
 #+end_src
 
-rebase - continue the rebasing process after resolving a conflict
+~rc~: continue the rebasing process after resolving a conflict
 manually and updating the index with the resolution.
 
 #+begin_src conf
-  rbc = rebase --continue
+  rc = rebase --continue
+  rbc = rc
 #+end_src
 
-** ~show~
+* ~reset~
 :PROPERTIES:
+:CREATED:  [2024-11-01 Fri 12:56]
+:header-args: :noweb-ref reset
+:END:
+
+~e~: main alias.
+
+#+begin_src conf
+  e = reset
+#+end_src
+
+~rs~: undo commit, softly.
+
+#+begin_src conf
+  es = reset --soft HEAD~1
+  undo-commit = es
+#+end_src
+
+~rh~: undo commit, hard. I'll usually prefer the ~uncommit~ command
+alias.
+
+#+begin_src conf
+  eh = reset --hard HEAD~1
+  undo-commit-hard = eh
+  uncommit = eh
+#+end_src
+
+* ~show~
+:PROPERTIES:
+:CREATED:  [2024-11-01 Fri 12:42]
 :header-args: :noweb-ref show
 :END:
 
-Show the content of the last commit.
-
 #+begin_src conf
-  hh = show @
+  h = show
 #+end_src
 
-** ~status~
+* ~status~
 :PROPERTIES:
+:CREATED:  [2024-11-01 Fri 12:44]
 :header-args: :noweb-ref status
 :END:
+
+#+begin_src conf
+  s = status
+#+end_src
 
 status with short format instead of full details
 
@@ -322,186 +472,28 @@ status with short format and showing branch and tracking info.
   ssb = status --short --branch
 #+end_src
 
-* ~log~ aliases
+* ~tag~
 :PROPERTIES:
-:header-args: :noweb-ref log-aliases
+:CREATED:  [2024-11-01 Fri 12:57]
+:header-args: :noweb-ref tag
 :END:
 
-Show log of changes, most recent first
+~t~: main alias.
 
 #+begin_src conf
-  log-changes = log --oneline --reverse
+  t = tag
 #+end_src
 
-Show log of new commits after you fetched, with stats, excluding
-merges
+~td~: delete a tag.
 
 #+begin_src conf
-  log-fresh = log ORIG_HEAD.. --stat --no-merges
+  td = tag -d
 #+end_src
 
-Show log in our preferred format for our key performance
-indicators. A.k.a. `ll`.
+~tags~: list tags.
 
 #+begin_src conf
-  log-like = log --graph --topo-order --abbrev-commit --date=short --decorate --all --boundary --pretty=format:'%Cgreen%ad %Cred%h%Creset -%C(yellow)%d%Creset %s %Cblue[%cn]%Creset %Cblue%G?%Creset'
-#+end_src
-
-Show log with dates in our local timezone
-
-#+begin_src conf
-  log-local = log --date=local
-#+end_src
-
-Show the log for my own commits by my own user email
-
-#+begin_src conf
-  log-my = !git log --author $(git config user.email)
-#+end_src
-
-Show log as a graph
-
-#+begin_src conf
-  log-graph = log --graph --all --oneline --decorate
-#+end_src
-
-Show the date of the earliest commit, in strict ISO 8601 format
-
-#+begin_src conf
-  log-first-date = !"git log --date-order --format=%cI | tail -1"
-#+end_src
-
-Show the date of the latest commit, in strict ISO 8601 format
-
-#+begin_src conf
-  log-latest-date = log -1 --date-order --format=%cI
-#+end_src
-
-Show the number of log entries by a specific date format
-
-#+begin_src conf
-  log-count-per-date-format = "!f() { d=\"$1\"; shift; git log $@ --format=oneline --format="%ad" --date=format:\"$d\" | awk '{a[$0]++}END{for(i in a){print i, a[i]}}' | sort; }; f"
-#+end_src
-
-Show the log of the recent hour, day, week, month, year
-
-#+begin_src conf
-  log-hour  = log --since "1 hour ago"
-  log-day   = log --since "1 day ago"
-  log-week  = log --since "1 week ago"
-  log-month = log --since "1 month ago"
-  log-year  = log --since "1 year ago"
-#+end_src
-
-Show the log of my own recent hour, day, week, month, year
-
-#+begin_src conf
-  log-my-hour  = log --author $(git config user.email) --since "1 hour ago"
-  log-my-day   = log --author $(git config user.email) --since "1 day ago"
-  log-my-week  = log --author $(git config user.email) --since "1 week ago"
-  log-my-month = log --author $(git config user.email) --since "1 month ago"
-  log-my-year  = log --author $(git config user.email) --since "1 year ago"
-#+end_src
-
-Show the number of log items by year, or month, or day, etc.
-
-#+begin_src conf
-  log-count-per-hour          = "!f() { git log-count-per-date-format \"%Y-%m-%dT%H\" $@ ; }; f"
-  log-count-per-day           = "!f() { git log-count-per-date-format \"%Y-%m-%d\" $@ ; }; f"
-  log-count-per-week          = "!f() { git log-count-per-date-format \"%Y#%V\" $@; }; f"
-  log-count-per-month         = "!f() { git log-count-per-date-format \"%Y-%m\" $@ ; }; f"
-  log-count-per-year          = "!f() { git log-count-per-date-format \"%Y\" $@ ; }; f"
-  log-count-per-hour-of-day   = "!f() { git log-count-per-date-format \"%H\" $@; }; f"
-  log-count-per-day-of-week   = "!f() { git log-count-per-date-format \"%u\" $@; }; f"
-  log-count-per-week-of-year  = "!f() { git log-count-per-date-format \"%V\" $@; }; f"
-#+end_src
-
-* Lookup aliases
-:PROPERTIES:
-:header-args: :noweb-ref lookup
-:END:
-
-whois: given a string for an author, try to figure out full name and
-email:
-
-#+begin_src conf
-  whois = "!sh -c 'git log --regexp-ignore-case -1 --pretty=\"format:%an <%ae>\n\" --author=\"$1\"' -"
-#+end_src
-
-Given any git object, try to show it briefly
-
-#+begin_src conf
-  whatis = show --no-patch --pretty='tformat:%h (%s, %ad)' --date=short
-#+end_src
-
-Show who contributed with summarized changes
-
-#+begin_src conf
-  who = shortlog --summary --
-#+end_src
-
-Show who contributed, in descending order by number of commits
-
-#+begin_src conf
-  whorank = shortlog --summary --numbered --no-merges
-#+end_src
-
-* Workflow aliases
-:PROPERTIES:
-:header-args: :noweb-ref workflow
-:END:
-
-Force-push should always be a =git push --force-with-lease=.
-
-#+begin_src conf
-  pushf = push --force-with-lease
-#+end_src
-
-Stash aliases for push & pop
-
-Note that if you are using an older version of git, before 2.16.0,
-then you can use the older "stash save" instead of the newer "stash
-push".
-
-#+begin_src conf
-  save = stash push
-  pop = stash pop
-#+end_src
-
-Do a push/pull for just one branch
-
-#+begin_src conf
-  push1 = "!git push origin $(git branch-name)"
-  pull1 = "!git pull origin $(git branch-name)"
-#+end_src
-
-Undo is simply a synonym for "reset" because "undo" can help novices.
-
-#+begin_src conf
-  undo-commit        = reset --soft HEAD~1
-  undo-commit-hard   = reset --hard HEAD~1
-#+end_src
-
-Nicknames
-
-#+begin_src conf
-  uncommit = reset --soft HEAD~1
-  unadd = reset HEAD
-  unstage = reset HEAD
-#+end_src
-
-Discard changes in a (list of) file(s) in working tree
-
-#+begin_src conf
-  discard = checkout --
-#+end_src
-
-Friendly wording is easier to remember.
-
-#+begin_src conf
-  branches = branch -a
   tags = tag -n1 --list
-  stashes = stash list
 #+end_src
 
 Tags by creation date.
@@ -517,7 +509,6 @@ Tags by creation date.
 #+begin_src conf :tangle ".gitalias" :noweb yes
   [alias]
 
-  <<oneletter>>
   <<add>>
   <<branch>>
   <<checkout>>
@@ -525,14 +516,14 @@ Tags by creation date.
   <<diff>>
   <<fetch>>
   <<log>>
-  <<log-aliases>>
   <<merge>>
   <<pull>>
+  <<push>>
   <<rebase>>
+  <<reset>>
   <<show>>
   <<status>>
-  <<lookup>>
-  <<workflow>>
+  <<tag>>
 #+end_src
 
 ** Org properties

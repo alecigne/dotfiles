@@ -31,6 +31,7 @@ cm = commit --message
 acm = commit -am
 cme = commit --message \"\" --allow-empty-message
 acme = commit -am \"\" --allow-empty-message
+wip = !git add -A && git commit -m "wip"
 dc = diff --cached
 fpt = fetch --prune --tags
 lg = log --graph

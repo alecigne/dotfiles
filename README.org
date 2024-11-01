@@ -86,18 +86,11 @@ Just load this once in Chrome:
 
 ** Git
 
-My [[https://git-scm.com/][Git]] configuration. Aliases include a selection of =git= aliases
-from the [[https://github.com/GitAlias/gitalias][gitalias]] repository, organized with =org-babel= for more
-readability. Please go to the original source for reference.
+My [[https://git-scm.com/][Git]] configuration.
 
-About the =.gitalias.org= file:
-
-- Every section has a Noweb reference.
-
-- Everything is then fed to a main code block through Noweb (see
-  the bottom of the raw Org file).
-
-- The result after ~org-babel-tangle~ is a =.gitalias= file.
+Aliases were originally inspired from the [[https://github.com/GitAlias/gitalias][gitalias]] repo and were then
+tailored to my usage. =.gitalias.org= uses =org-babel= for more
+readability, and is tangled into the =.gitalias= file.
 
 ** GnuPG
 

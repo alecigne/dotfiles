@@ -11,6 +11,15 @@ were then tailored to my usage.
 The source of truth is Git commands, so aliases are organized by
 commands in this file.
 
+This file uses [[https://orgmode.org/worg/org-contrib/babel/][Org-babel]]:
+
+- Every section has a Noweb reference.
+
+- Everything is then fed to a main code block through Noweb (see
+  the bottom of the raw Org file).
+
+- The result after ~org-babel-tangle~ is a =.gitalias= file.
+
 ** Shortcut aliases vs. command aliases
 :PROPERTIES:
 :CREATED:  [2024-11-01 Fri 13:32]

@@ -389,6 +389,7 @@ overwriting work that hasn't been fetched.
 #+begin_src conf
   uf = push --force-with-lease
   force-push = uf
+  pushf = uf
 #+end_src
 
 * ~rebase~

@@ -40,6 +40,7 @@ p = pull
 u = push
 uf = push --force-with-lease
 force-push = uf
+pushf = uf
 r = rebase
 rb = r
 ra = rebase --abort

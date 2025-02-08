@@ -6,6 +6,7 @@ ap = add -p
 b = branch
 ba = branch -a
 branches = ba
+bd = branch -d
 br = branch -r
 remote-branches = br
 bv = b -v

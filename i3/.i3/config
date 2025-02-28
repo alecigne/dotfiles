@@ -119,10 +119,8 @@ bindsym $mod+Shift+Return exec --no-startup-id rofi -modi "clipboard:greenclip p
 
 # App mode
 mode "app" {
-  bindsym c exec urxvt -e cmus, mode "default"
   bindsym e exec emacs, mode "default"
   bindsym f exec firefox, mode "default"
-  bindsym j exec eclipse, mode "default"
   bindsym z exec filezilla, mode "default"
   bindsym Control+g mode "default"
   bindsym Return mode "default"

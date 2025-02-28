@@ -1,6 +1,6 @@
 # Things to launch
 exec --no-startup-id nm-applet
-exec --no-startup-id feh --bg-scale ~/.wallpapers/skynet.png
+exec --no-startup-id feh --bg-scale ~/.wallpapers/current
 exec --no-startup-id setxkbmap fr && xmodmap ~/.Xmodmap
 exec_always --no-startup-id numlockx on
 exec_always --no-startup-id alttab

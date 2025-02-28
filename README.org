@@ -171,6 +171,20 @@ Good resources:
 - https://wallhaven.cc/
 - https://unsplash.com/
 
+[[file:wallpapers/.wallpapers/current][The 'current' file]] in my wallpapers directory is a symlink to [[file:wallpapers/.wallpapers/linux.jpeg][my
+default wallpaper]]. When I stow my dotfiles, another symlink is created
+in this way:
+
+#+begin_example
+  ~/.wallpapers/current -> ~/etc/dotfiles/wallpapers/.wallpapers/current
+#+end_example
+
+My i3 config always loads =~/.wallpapers/current=, so I always have a
+default wallpaper when I [[https://github.com/alecigne/ansible-desktop][generate a new environment]].
+
+[[https://github.com/alecigne/alc-utils/blob/master/pywallpaper.py][This script]], in my personal utils, downloads a random wallpaper and
+make the current symlink above point to it.
+
 ** Xmodmap
 
 My [[https://wiki.archlinux.org/title/xmodmap][Xmodmap]] config.

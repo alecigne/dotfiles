@@ -268,16 +268,22 @@ with a Git repository.
   wip = !git add -A && git commit -m "wip"
 #+end_src
 
-~author~: changes the author of the last commit. Used in combination
-with ~cane~, for ~commit --amend --no-edit~.
+~author~: changes the author of the last commit interactively. Used in
+combination with ~cane~, for ~commit --amend --no-edit~.
+
+Example:
+
+#+begin_src sh :noweb-ref none
+  git author "Foo Bar <foobar@foobar.com>"
+#+end_src
 
 #+begin_src conf
   author = cane --author
 #+end_src
 
-~fix-author~: apply current user's information to the last commit. I
-use it when I commit with a wrong configuration with =user.name= and
-=user.email=.
+~apply-author~: apply current user's information to the last commit. I
+use it when I commit with the wrong user-related config (=user.name=
+and =user.email=).
 
 #+begin_src conf
   apply-author = "!git author \"$(git config user.name) <$(git config user.email)>\""

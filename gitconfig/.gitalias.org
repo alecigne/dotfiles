@@ -283,6 +283,22 @@ use it when I commit with a wrong configuration with =user.name= and
   apply-author = "!git author \"$(git config user.name) <$(git config user.email)>\""
 #+end_src
 
+~fixup-to~: reset everything upto a commit (included), then commit
+using that commit's message. This is more or less equivalent to
+launching an interactive rebase and marking everything as =fixup=.
+
+#+begin_src conf
+  fixup-to = "!f() { git reset --soft \"$1\"^ && git commit --reuse-message=\"$1\"; }; f"
+#+end_src
+
+~squash-to~: same as ~fixup-to~, but ask for a commit message. This is
+more or less equivalent to launching an interactive rebase and marking
+everything as =squash=.
+
+#+begin_src conf
+  squash-to = "!f() { git reset --soft \"$1\"^ && git commit; }; f"
+#+end_src
+
 * ~diff~
 :PROPERTIES:
 :header-args: :noweb-ref diff

@@ -27,6 +27,8 @@ acme = commit -am \"\" --allow-empty-message
 wip = !git add -A && git commit -m "wip"
 author = cane --author
 apply-author = "!git author \"$(git config user.name) <$(git config user.email)>\""
+fixup-to = "!f() { git reset --soft \"$1\"^ && git commit --reuse-message=\"$1\"; }; f"
+squash-to = "!f() { git reset --soft \"$1\"^ && git commit; }; f"
 d = diff
 dc = diff --cached
 f = fetch

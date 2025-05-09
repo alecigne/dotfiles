@@ -427,21 +427,16 @@ overwriting work that hasn't been fetched.
 :header-args: :noweb-ref rebase
 :END:
 
-# TODO Remove 'rb' aliases when I'll be used to 'r'.
-
-~r~ / ~rb~: main alias. ~rb~ is an exception to my one-letter rule,
-for compatibility with my muscle memory :)
+~r~: main alias.
 
 #+begin_src conf
   r = rebase
-  rb = r
 #+end_src
 
 ~ra~: cancel the rebasing process.
 
 #+begin_src conf
   ra = rebase --abort
-  rba = ra
 #+end_src
 
 ~rc~: continue the rebasing process after resolving a conflict
@@ -449,7 +444,6 @@ manually and updating the index with the resolution.
 
 #+begin_src conf
   rc = rebase --continue
-  rbc = rc
 #+end_src
 
 * ~reset~

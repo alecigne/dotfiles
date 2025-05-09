@@ -88,10 +88,10 @@ Just load this once in Chrome:
 
 My [[https://git-scm.com/][Git]] configuration.
 
-It is actually a so-called "literate" config, using [[https://orgmode.org/manual/Working-with-Source-Code.html][Org Babel]]. Check
-it [[file:gitconfig/.gitalias.org][here]]. That literate config is tangled into the =.gitalias= file,
-and the Org file is ignored by Stow thanks to a [[file:gitconfig/.stow-local-ignore][.stow-local-ignore]]
-file.
+Aliases are stored in a so-called "literate" config, using [[https://orgmode.org/manual/Working-with-Source-Code.html][Org
+Babel]]. Check it [[file:gitconfig/.gitalias.org][here]]. That literate config is tangled into the
+=.gitalias= file, and the Org file is ignored by Stow thanks to a
+[[file:gitconfig/.stow-local-ignore][.stow-local-ignore]] file.
 
 Aliases were originally inspired from the [[https://github.com/GitAlias/gitalias][gitalias]] repo and were then
 tailored to my usage.

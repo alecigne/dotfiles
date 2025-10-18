@@ -157,6 +157,19 @@ mode "$mode_music" {
 set $mode_music (p)lay/(p)ause, volume (up), volume (down)
 bindsym $mod+F2 mode "$mode_music"
 
+# xrandr mode, just for orientations so far
+mode "$mode_xrandr" {
+  bindsym n exec --no-startup-id xrandr --orientation normal, mode "default"
+  bindsym l exec --no-startup-id xrandr --orientation left, mode "default"
+  bindsym r exec --no-startup-id xrandr --orientation right, mode "default"
+  bindsym i exec --no-startup-id xrandr --orientation inverted, mode "default"
+  bindsym Control+g mode "default"
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+set $mode_xrandr (n)ormal, (l)eft, (r)ight, (i)nverted
+bindsym $mod+x mode "$mode_xrandr"
+
 # i3bar
 bar {
   mode dock

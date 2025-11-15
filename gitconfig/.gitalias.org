@@ -92,8 +92,6 @@ for command aliases. For example:
   branches = ba
 #+end_src
 
-In practice, for clarity, I try not to reuse aliases in other aliases.
-
 Note that Git doesn't care about the order in which aliases are
 defined. However, for clarity, aliases are always defined first before
 being reused in another.
@@ -144,6 +142,13 @@ it in the repo.
 
 #+begin_src conf
   bd = branch -d
+#+end_src
+
+~bm~ / ~rename-branch~ : rename a branch.
+
+#+begin_src conf
+  bm = branch -m
+  rename-branch = bm
 #+end_src
 
 ~br~ / ~remote-branches~: list all remote branches.

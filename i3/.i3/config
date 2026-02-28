@@ -225,3 +225,16 @@ bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
 
 # xcalc
 for_window [class="XCalc"] floating enable, move absolute position center
+
+# Light mode, F3
+mode "$mode_light" {
+  bindsym j exec --no-startup-id brightnessctl set +5%
+  bindsym k exec --no-startup-id brightnessctl set 5%-
+  bindsym d exec --no-startup-id redshift -P -O 6500, mode default
+  bindsym n exec --no-startup-id redshift -P -O 4500, mode default
+  bindsym Control+g mode "default"
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+set $mode_light (j) increase brightness, (k) decrease brightness, (d)ay mode, (n)ight mode
+bindsym $mod+F3 mode "$mode_light"

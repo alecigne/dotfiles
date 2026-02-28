@@ -216,9 +216,6 @@ bindsym --release Shift+Print exec "screenshot -s ~/tmp/screenshots/"
 # Take a screenshot of a whole window and copy it to a clipboard
 bindsym --release Print exec "screenshot ~/tmp/screenshots/"
 
-# Anki
-for_window [instance="anki"] floating enable
-
 # Brightness
 bindsym XF86MonBrightnessUp exec --no-startup-id brightnessctl set +5%
 bindsym XF86MonBrightnessDown exec --no-startup-id brightnessctl set 5%-
